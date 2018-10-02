@@ -1,18 +1,28 @@
-<div>
-  <form action="" (submit)='loginUser()'>
-    <div class="form-group">
-      <label for="">Email</label>
-      <input type="email" class="form-control" name="email" [(ngModel)]='email'>
-    </div>
-    <div class="form-group">
-      <label for="">Pass</label>
-      <input type="password" class="form-control" name="password" [(ngModel)]='password'>
-    </div>
-    <div class="text-center text-danger">
-      <p>{{err}}</p>
-    </div>
-    <div class="form-group">
-      <button type="submit" class="btn btn-primary">Ingresar</button>
-    </div>
-  </form>
+<div class="container-fluid bg-color main-container">
+  <div class="row">
+      <div class="container col-xl-4 col-lg-4 col-md-8 col-sm-10 col-10  form-container text-center p-5">
+        <span>Login</span>
+        <hr>
+          <form action="" (submit)='loginUser()' class="">
+              <div class="form-group row pt-4 pl-3">
+                  <i class="fa fa-user-o col-md-1 col-form-label" aria-hidden="true"></i>
+                <div class="col-md-10 pl-0 ">
+                    <input  type="email" placeholder="correo" class="form-control form-login" name="email" [(ngModel)]='email'>
+                </div>
+              </div>
+              <div class="form-group row pt-4 pl-3">
+                  <i class="fa fa-unlock-alt col-1 col-form-label" aria-hidden="true"></i>
+                <div class="col-md-10 pl-0">
+                    <input type="password" placeholder="contraseña" class="form-control form-login" name="password" [(ngModel)]='password'>
+                </div>
+              </div>
+              <div class="text-center text-danger">
+                <p>{{err}}</p>
+              </div>
+              <div class="form-group row pt-4">
+                <button type="submit" class="btn offset-md-1 offset-lg-1 col-10">Ingresar</button>
+              </div>
+            </form>
+      </div>
+  </div>  
 </div>

@@ -1,0 +1,60 @@
+.bg-color {
+  background-color: rgb(231, 233, 238);
+}
+
+.main-container {
+  height: 100vh;
+}
+
+.main-container:first-child {
+  padding-top: 15vh;
+}
+
+.form-container {
+  background-color: white;
+  height: 70vh;
+}
+
+.form-container span {
+  color: #a3a6ad;
+  font-family: sans-serif;
+  font-weight: 200;
+  font-size: 40px;
+}
+form .form-login {
+  border-radius: 0px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px solid #c3c5ca;
+}
+
+form .form-login:focus {
+  color: #c3c5ca;
+    background-color: #fff;
+    border-bottom-color: #9cbbda;
+    border-width: 2px;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(226, 224, 224, 0.25);
+}
+
+label {
+  padding: 0px;
+}
+
+hr {
+  background-color: #c3c5ca;
+}
+
+button.btn {
+  background-color: #2C79BE;
+  border-radius: 0px;
+  color: #fff;
+  font-weight: 700;
+}
+
+i {
+  margin-top: 0.4rem;
+  margin-right: 0.2rem;
+  font-size: 1.2rem;
+}
