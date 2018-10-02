@@ -23,6 +23,9 @@ import { ViewAdminComponent } from './view-admin/view-admin.component';
 import { ViewLoginComponent } from './view-login/view-login.component';
 import { ViewDevComponent } from './view-dev/view-dev.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { LoginAdminComponent } from './login-admin/login-admin.component';
+import { ViewAdministradorComponent } from './view-administrador/view-administrador.component';
+
 
 import { HttpService } from './shared/http.service';
 import { AuthService } from './auth/auth.service';
@@ -35,6 +38,8 @@ import { AuthFirebaseService } from './services/auth-firebase.service';
 import { UserService } from './services/user.service';
 import { SharingDataService } from './services/sharing-data.service';
 import { TurnsStateService } from './services/turns-state.service';
+import { AuthAdminService } from './services/auth-admin.service';
+
 
 
 
@@ -50,11 +55,11 @@ import { environment } from '../environments/environment';
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: ViewLoginComponent },
+  { path: '', component: LoginAdminComponent },
   { path: 'home', component: ViewHomeComponent },
   { path: 'login', component: LoginFbComponent },
   { path: 'coordi', component: ViewCoorComponent, canActivate: [AuthGuard] },
-  { path: 'admin', component: ViewAdminComponent, canActivate: [AuthGuard] },
+  { path: 'administrador', component: ViewAdministradorComponent, canActivate: [AuthGuard] },
   { path: 'dev', component: ViewDevComponent, canActivate: [AuthGuard]},
   {path: '**', component: NotFoundPageComponent}
 ];
@@ -70,8 +75,12 @@ const routes: Routes = [
     LoginFbComponent,
     ViewCoorComponent,
     ViewAdminComponent,
+    ViewAdministradorComponent,
     NotFoundPageComponent,
-    ViewDevComponent
+    ViewDevComponent,
+    LoginAdminComponent,
+    LoginAdminComponent,
+    ViewAdministradorComponent
   ],
   imports: [
 AngularFireAuthModule,
@@ -93,6 +102,7 @@ AngularFireAuthModule,
     HttpService,
     AuthService,
     AuthGuard,
+    AuthAdminService,
     HomeService,
     InscriptionService,
     TurnosService,
