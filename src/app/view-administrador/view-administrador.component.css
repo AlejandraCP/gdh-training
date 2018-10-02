@@ -1,0 +1,17 @@
+#sidebar {
+  width: 165px;
+  min-height: 100vh;
+  transition: all 0.3s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+#content {
+  margin-left: 165px;
+  min-height: 100vh;
+  height: auto;
+  width: 100vw;
+  background-color: #efefef;
+}

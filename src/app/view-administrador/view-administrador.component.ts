@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthAdminService } from './../services/auth-admin.service';
+
 
 @Component({
   selector: 'app-view-administrador',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewAdministradorComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public authAdminService: AuthAdminService
+  ) { }
 
   ngOnInit() {
   }

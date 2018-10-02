@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AuthAdminService } from './../services/auth-admin.service';
 import { Router } from '@angular/router';
 import { Site } from '@microsoft/microsoft-graph-types';
-// import { DomSanitizer } from '@angular/platform-browser';
-
 
 @Component({
   selector: 'app-login-admin',
