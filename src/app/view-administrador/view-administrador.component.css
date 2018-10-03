@@ -1,0 +1,29 @@
+.wrapper {
+  /* display: flex;
+  width: 100%;
+  align-items: stretch;
+  box-sizing: unset !important; */
+  height: 100vh;
+}
+
+#sidebar {
+  width: 165px;
+  min-height: 100vh;
+  transition: all 0.3s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+#content {
+  margin-left: 165px;
+  min-height: 100vh;
+  height: auto;
+  /* width: 100vw; */
+  background-color: #efefef;
+}
+
+p {
+  margin-bottom: 0px;
+}

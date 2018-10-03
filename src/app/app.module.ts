@@ -25,6 +25,8 @@ import { ViewDevComponent } from './view-dev/view-dev.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { LoginAdminComponent } from './login-admin/login-admin.component';
 import { ViewAdministradorComponent } from './view-administrador/view-administrador.component';
+import { CrearCursoComponent } from './view-administrador/crear-curso/crear-curso.component';
+import { MisCursosComponent } from './view-administrador/mis-cursos/mis-cursos.component';
 
 
 import { HttpService } from './shared/http.service';
@@ -54,6 +56,7 @@ import { environment } from '../environments/environment';
 // guard
 import { AuthGuard } from './guards/auth.guard';
 
+
 const routes: Routes = [
   { path: '', component: LoginAdminComponent },
   { path: 'home', component: ViewHomeComponent },
@@ -80,7 +83,9 @@ const routes: Routes = [
     ViewDevComponent,
     LoginAdminComponent,
     LoginAdminComponent,
-    ViewAdministradorComponent
+    ViewAdministradorComponent,
+    CrearCursoComponent,
+    MisCursosComponent
   ],
   imports: [
 AngularFireAuthModule,
