@@ -6,7 +6,7 @@
   color: #5c6579;
   font-weight: 700;
 }
-.view-login div.row div:nth-child(1) div:nth-child(1) p{
+.view-login div.row div:nth-child(1) div:nth-child(1) p, ul li{
   color: #8690a0;
   font-weight: 400;
   font-size: 1rem;
