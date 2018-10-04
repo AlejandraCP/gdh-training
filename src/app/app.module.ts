@@ -14,9 +14,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { ViewUserHomeComponent } from './view-user-home/view-user-home.component';
 import { LoginComponent } from './login/login.component';
-import { ViewHomeComponent } from './view-home/view-home.component';
 import { LoginFbComponent } from './login-fb/login-fb.component';
 import { ViewCoorComponent } from './view-coor/view-coor.component';
 import { ViewAdminComponent } from './view-admin/view-admin.component';
@@ -51,7 +50,7 @@ import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: '', component: ViewLoginComponent },
-  { path: 'home', component: ViewHomeComponent },
+  { path: 'home', component: ViewUserHomeComponent },
   { path: 'login', component: LoginFbComponent },
   { path: 'coordi', component: ViewCoorComponent, canActivate: [AuthGuard] },
   { path: 'admin', component: ViewAdminComponent, canActivate: [AuthGuard] },
@@ -63,15 +62,14 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     LoginComponent,
     ViewLoginComponent,
-    ViewHomeComponent,
     LoginFbComponent,
     ViewCoorComponent,
     ViewAdminComponent,
     NotFoundPageComponent,
-    ViewDevComponent
+    ViewDevComponent,
+    ViewUserHomeComponent
   ],
   imports: [
 AngularFireAuthModule,
