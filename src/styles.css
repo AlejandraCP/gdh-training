@@ -10,23 +10,14 @@
   --dark-blue: #30497B;
 }
 
-.separador{
-  width: 1px;
-  height: 18px;
-  margin-left: 2px;
-  margin-right: 2px;
-  margin-bottom: -3px;
-  background: #30497B;
-  display: inline-block;
-}
 .navbar span{
   font-size: 12px;
 }
 .navbar{
-  background-color: #e3f2fd;
+  background-color: #fcfdfe;
 }
 .navbar img{
-  height: 20px;
+  height: 2vh;
   margin-left: -15px;
 }
 .navbar span:nth-child(1){
@@ -115,6 +106,7 @@
     top: 10%;
   }
 } */
+
 
 /* switch */
 
