@@ -1,9 +1,63 @@
 <div id="wrapper">
-    <div id="sidebar">
-        <p>sidebar</p>
-      </div>
-      <div id="content">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime harum laborum iste alias temporibus, deleniti repellat officiis quidem, ea eos totam? Repellat, dolore rem laudantium iusto sunt corrupti alias ipsum?</p>
-      </div>
-</div>
+  <nav id="sidebar" [ngClass]="{'width-big': show,'width-small': !show}">
+    <div>
+      <button class="btn btn-toggle mt-2 ml-1">
+        <i class="fa fa-bars icon-menu" id="menu" (click)='toggle()'></i>
+      </button>
 
+    </div>
+    <div *ngIf="show" class="text-center content-profile mb-5 pb-2">
+      <div class="text-center mt-5 mb-4">
+        <img src="./../../assets/images/user.png" alt="user" srcset="" class="img-fluid img-user">
+      </div>
+      <p class="">Administrador</p>
+    </div>
+    <div *ngIf="show">
+      <div class="nav flex-column nav-pills tab-big" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a class="nav-link active mb-1" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+          aria-controls="v-pills-home" aria-selected="true">
+          <i class="fa fa-pencil" aria-hidden="true"></i>
+          Crear curso</a>
+        <a class="nav-link mb-1" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
+          aria-controls="v-pills-profile" aria-selected="false">
+          <i class="fa fa-book" aria-hidden="true"></i>
+          Mis cursos</a>
+      </div>
+    </div>
+    <div *ngIf="!show">
+      <div class="nav flex-column nav-pills tab-small text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <i class="fa fa-user-circle-o mt-4 mb-3" aria-hidden="true"></i>
+        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+          aria-controls="v-pills-home" aria-selected="true">
+          <i class="fa fa-pencil" aria-hidden="true"></i>
+        </a>
+        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
+          aria-controls="v-pills-profile" aria-selected="false">
+          <i class="fa fa-book" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+    <div class="sign-out" *ngIf="show">
+      <a href="/" (click)="logOut">
+        <i class="fa fa-sign-out" aria-hidden="true"></i>
+        Salir
+      </a>
+    </div>
+    <div class="sign-out" *ngIf="!show">
+      <a href="/" (click)="logOut">
+        <i class="fa fa-sign-out" aria-hidden="true"></i>
+      </a>
+    </div>
+  </nav>
+  <div id="content" [ngClass]="{'margin-big': show,'margin-small': !show}">
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+        <app-crear-curso></app-crear-curso>
+      </div>
+      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+        <app-mis-cursos></app-mis-cursos>
+      </div>
+    </div>
+
+  </div>
+</div>

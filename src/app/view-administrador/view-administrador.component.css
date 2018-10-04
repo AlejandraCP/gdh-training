@@ -1,17 +1,129 @@
+.wrapper {
+  /* display: flex;
+  width: 100%;
+  align-items: stretch;
+  box-sizing: unset !important; */
+  height: 100vh;
+}
+
 #sidebar {
-  width: 165px;
+  /* width: 165px; */
   min-height: 100vh;
   transition: all 0.3s;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 999;
+  background-color: #FCFDFE;
 }
 
 #content {
-  margin-left: 165px;
+  /* margin-left: 165px; */
   min-height: 100vh;
   height: auto;
-  width: 100vw;
-  background-color: #efefef;
+  /* width: 100vw; */
+  background-color: #F4F8F9;
+}
+
+.width-big {
+  width: 165px;
+}
+
+.width-small {
+  width: 55px;
+}
+
+.margin-big {
+  margin-left: 165px;
+}
+
+.margin-small {
+  margin-left: 55px;
+}
+p {
+  margin-bottom: 0px;
+}
+
+button.btn-toggle {
+  background-color: #FCFDFE !important;
+}
+
+.btn:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0;
+}
+
+i.icon-menu {
+  font-size: 1.3rem;
+  color: #a3a6ad;
+}
+
+.fa-user-circle-o {
+  color: #8b8e94;
+}
+
+.img-user {
+  border-radius: 50%;
+  /* border: 1px gray solid; */
+  width: 100px;
+  height: 100px;
+}
+
+div.content-profile p {
+  font-weight: 400;
+  color: #8b8e94;
+  font-size: 1.05rem;
+}
+
+.tab-big .nav-link.active, .tab-big .show>.nav-link, .tab-small .nav-link.active, .tab-small .show>.nav-link {
+  color: #8b8e94;
+  background-color: #fff;
+}
+
+.tab-big .nav-link.active i, .tab-big .show>.nav-link i, .tab-small .nav-link.active i, .tab-small .show>.nav-link i{
+  color: #5b80c9;
+}
+
+.tab-small .nav-link.active, .tab-small .show>.nav-link {
+  border-radius: 0px;
+  border-left: 3px solid #5b80c9;
+}
+
+
+.tab-big a, .tab-small a {
+  color: #8b8e94;
+}
+
+.tab-big i {
+  font-size: 1.5rem;
+}
+
+.tab-small i {
+  font-size: 1.3rem;
+}
+
+.tab-big a:first-child, .tab-small a:first-child {
+  border-top: 1px solid #a3a6ad;
+  border-radius: 0px;
+}
+
+.tab-big a:nth-child(2) {
+  border-top: 1px solid #bfc0c4;
+  border-bottom: 1px solid #bfc0c4;
+  border-radius: 0px;
+}
+
+.sign-out {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.sign-out a {
+  color: #8b8e94;
+  text-decoration: none;
+}
+
+.sign-out i {
+  font-size: 1.5rem;
 }

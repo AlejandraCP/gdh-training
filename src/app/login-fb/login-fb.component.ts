@@ -54,4 +54,8 @@ export class LoginFbComponent implements OnInit {
       });
   }
 
+  logOut() {
+    this.authService.logout();
+  }
+
 }
