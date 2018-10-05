@@ -55,6 +55,7 @@ import { environment } from '../environments/environment';
 // guard
 import { AuthGuard } from './guards/auth.guard';
 import { SidebarDirective } from './directives/sidebar.directive';
+import { VerRegistroComponent } from './view-administrador/ver-registro/ver-registro.component';
 
 
 const routes: Routes = [
@@ -86,7 +87,8 @@ const routes: Routes = [
     CrearCursoComponent,
     MisCursosComponent,
     SidebarDirective,
-    ViewUserHomeComponent
+    ViewUserHomeComponent,
+    VerRegistroComponent
   ],
   imports: [
 AngularFireAuthModule,
