@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files
+/* You can add global styles to this file, and also import other style files */
 
 * {
   font-family: Roboto, sans-serif;
@@ -10,7 +10,7 @@
   --dark-blue: #30497B;
 }
 
-.separador{
+.separador {
   width: 1px;
   height: 18px;
   margin-left: 2px;
@@ -19,14 +19,15 @@
   background: #30497B;
   display: inline-block;
 }
+
 .navbar span{
   font-size: 12px;
 }
 .navbar{
-  background-color: #e3f2fd;
+  background-color: #fcfdfe;
 }
 .navbar img{
-  height: 20px;
+  height: 2vh;
   margin-left: -15px;
 }
 .navbar span:nth-child(1){
@@ -88,7 +89,7 @@
 .carousel-item{
   transition-duration: 0.7s;
   -webkit-transition: width 2s linear 1s; /* For Safari 3.1 to 6.0 */
-  /* transition: width 2s linear 1s;
+  transition: width 2s linear 1s;
 }
 
 .modal-open .modal{
@@ -114,7 +115,8 @@
   .modal-open .modal{
     top: 10%;
   }
-} */
+} 
+
 
 /* switch */
 
