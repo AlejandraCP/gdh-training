@@ -1,0 +1,29 @@
+.navbar{
+    background: #fcfdfe;
+}
+select {
+    height: 30px;
+    padding-top: 2px;
+    padding-bottom: 5px;
+    color: #898989;
+}
+.content-mis-cursos{
+    color: #898989;
+    
+}
+.detail-mis-cursos{
+    font-size: 15px;
+}
+.detail-mis-cursos button{
+    margin-right: -4px;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+.fec-ini{
+    color: #727272;
+}
+.detail-mis-cursos p{
+    margin-bottom: 0px;
+}
+

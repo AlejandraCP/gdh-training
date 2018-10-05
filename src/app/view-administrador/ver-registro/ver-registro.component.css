@@ -1,0 +1,54 @@
+.navbar{
+    background: #fcfdfe;
+}
+.tg  {
+    border-collapse:collapse;
+    border-spacing:0;
+    border-color:#dee2e6;
+}
+.tg td{
+    font-size:14px;
+    padding:10px 5px;
+    border-right: 1px solid #dee2e6;
+    overflow:hidden;
+    word-break:normal;
+    color: #898989;
+    background-color:#ffffff;
+}
+.tg th{
+    font-size:14px;
+    font-weight:600;
+    padding:10px 5px;
+    border: 1px solid #dee2e6;
+    overflow:hidden;
+    word-break:normal;
+    color: #898989;
+    background-color:#ffffff;
+}
+.tg .tg-ycr8{
+    background-color:#ffffff;
+    text-align:left;vertical-align:top
+}
+.tg .tg-fs8j{
+    background-color:#ffffff;
+    text-align:left
+}
+.tbl-ver-registro tr th:nth-child(1){
+    width: 250px;
+}
+.tbl-ver-registro tr th:nth-child(2){
+    width: 210px;
+}
+.tbl-ver-registro tr th:nth-child(3){
+    width: 100px;
+}
+.tbl-ver-registro tr th:nth-child(4){
+    width: 200px;
+}
+.tbl-ver-registro tr th:nth-child(5){
+    width: 60px;
+}
+.tbl-ver-registro tr:nth-child(2) td{
+    width: 130px;
+    border: 1px solid #cccccc;
+}
