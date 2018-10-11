@@ -1,122 +1,127 @@
-<nav class="navbar navbar-expand-lg navbar-light border-bottom">
-  <div class="col-md-6 col-6 col-sm-6">
-      <img src="../../assets/images/logo-gris.png" alt="logo Inteligo">
-  </div>
-  <div class="col-md-6 col-6 col-sm-6 text-right">
-      <span>Intraining EnCurso</span>
-  </div>
-</nav>
-<div class="content-mis-cursos pt-4 pl-5">
-  <div class="container-fluid">
-      <div class="row">
-        <div class="col-12 col-md-4">
-          <h6>Elige tus cursos por mes y año</h6>
-          <div class="row">
-            <div class="col-4">
-              <select class="custom-select">
-                <option >Mes</option>
-              </select>
+<div *ngIf = "!showRegistro">
+  <nav class="navbar navbar-expand-lg navbar-light border-bottom">
+    <div class="col-md-6 col-6 col-sm-6">
+        <img src="../../assets/images/logo-gris.png" alt="logo Inteligo">
+    </div>
+    <div class="col-md-6 col-6 col-sm-6 text-right">
+        <span>Intraining EnCurso</span>
+    </div>
+  </nav>
+  <div class="content-mis-cursos pt-4 pl-5">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-md-4">
+            <h6>Elige tus cursos por mes y año</h6>
+            <div class="row">
+              <div class="col-4">
+                <select class="custom-select">
+                  <option >Mes</option>
+                </select>
+              </div>
+              <div class="col-4">
+                <select class="custom-select">
+                  <option >Año</option>
+                </select>
+              </div>
+              <div class="col-4">
+                <button class="btn btn-search font-weight-bold">Buscar</button>
+              </div>
             </div>
-            <div class="col-4">
-              <select class="custom-select">
-                <option >Año</option>
-              </select>
+          </div>
+        </div>
+        <div class="row mt-4 mr-4">
+          <div class="col-12 col-md-4 pr-5">
+            <div class="border bg-white rounded mt-4 detail-mis-cursos">
+              <p class="pr-3 pl-3 pt-3 font-weight-bold">Scrum básico</p>
+              <p class="pr-3 pl-3 pb-3"> <span class="font-weight-bold fec-ini">Fecha de inicio </span><span>20 de Marzo</span></p>
+              <button class="w-50 d-inline-block border-right border-white">Editar </button>
+              <button class="w-50 d-inline-block" (click)='toggleRegistro()'>Ver registro</button>
             </div>
-            <div class="col-4">
-              <button class="btn btn-search font-weight-bold">Buscar</button>
+          </div>
+          <div class="col-12 col-md-4 pr-5">
+            <div class="border bg-white rounded mt-4 detail-mis-cursos">
+              <p class="pr-3 pl-3 pt-3 font-weight-bold">Scrum básico</p>
+              <p class="pr-3 pl-3 pb-3"> <span class="font-weight-bold fec-ini">Fecha de inicio </span><span>20 de Marzo</span></p>
+              <button class="w-50 d-inline-block border-right border-white">Editar </button>
+              <button class="w-50 d-inline-block">Ver registro</button>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 pr-5">
+            <div class="border bg-white rounded mt-4 detail-mis-cursos">
+              <p class="pr-3 pl-3 pt-3 font-weight-bold">Scrum básico</p>
+              <p class="pr-3 pl-3 pb-3"> <span class="font-weight-bold fec-ini">Fecha de inicio </span><span>20 de Marzo</span></p>
+              <button class="w-50 d-inline-block border-right border-white">Editar </button>
+              <button class="w-50 d-inline-block">Ver registro</button>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 pr-5">
+            <div class="border bg-white rounded mt-4 detail-mis-cursos">
+              <p class="pr-3 pl-3 pt-3 font-weight-bold">Técnicas y estrategias de negociación - Harvard</p>
+              <p class="pr-3 pl-3 pb-3"> <span class="font-weight-bold fec-ini">Fecha de inicio </span><span>20 de Marzo</span></p>
+              <button class="w-50 d-inline-block border-right border-white">Editar </button>
+              <button class="w-50 d-inline-block">Ver registro</button>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 pr-5">
+            <div class="border bg-white rounded mt-4 detail-mis-cursos">
+              <p class="pr-3 pl-3 pt-3 font-weight-bold">Scrum básico</p>
+              <p class="pr-3 pl-3 pb-3"> <span class="font-weight-bold fec-ini">Fecha de inicio </span><span>20 de Marzo</span></p>
+              <button class="w-50 d-inline-block border-right border-white">Editar </button>
+              <button class="w-50 d-inline-block">Ver registro</button>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 pr-5">
+            <div class="border bg-white rounded mt-4 detail-mis-cursos">
+              <p class="pr-3 pl-3 pt-3 font-weight-bold">Scrum básico</p>
+              <p class="pr-3 pl-3 pb-3"> <span class="font-weight-bold fec-ini">Fecha de inicio </span><span>20 de Marzo</span></p>
+              <button class="w-50 d-inline-block border-right border-white">Editar </button>
+              <button class="w-50 d-inline-block">Ver registro</button>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 pr-5">
+            <div class="border bg-white rounded mt-4 detail-mis-cursos">
+              <p class="pr-3 pl-3 pt-3 font-weight-bold">Técnicas y estrategias de negociación - Harvard</p>
+              <p class="pr-3 pl-3 pb-3"> <span class="font-weight-bold fec-ini">Fecha de inicio </span><span>20 de Marzo</span></p>
+              <button class="w-50 d-inline-block border-right border-white">Editar </button>
+              <button class="w-50 d-inline-block">Ver registro</button>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 pr-5">
+            <div class="border bg-white rounded mt-4 detail-mis-cursos">
+              <p class="pr-3 pl-3 pt-3 font-weight-bold">Scrum básico</p>
+              <p class="pr-3 pl-3 pb-3"> <span class="font-weight-bold fec-ini">Fecha de inicio </span><span>20 de Marzo</span></p>
+              <button class="w-50 d-inline-block border-right border-white">Editar </button>
+              <button class="w-50 d-inline-block">Ver registro</button>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 pr-5">
+            <div class="border bg-white rounded mt-4 detail-mis-cursos">
+              <p class="pr-3 pl-3 pt-3 font-weight-bold">Scrum básico</p>
+              <p class="pr-3 pl-3 pb-3"> <span class="font-weight-bold fec-ini">Fecha de inicio </span><span>20 de Marzo</span></p>
+              <button class="w-50 d-inline-block border-right border-white">Editar </button>
+              <button class="w-50 d-inline-block">Ver registro</button>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 pr-5">
+            <div class="border bg-white rounded mt-4 detail-mis-cursos">
+              <p class="pr-3 pl-3 pt-3 font-weight-bold">Técnicas y estrategias de negociación - Harvard</p>
+              <p class="pr-3 pl-3 pb-3"> <span class="font-weight-bold fec-ini">Fecha de inicio </span><span>20 de Marzo</span></p>
+              <button class="w-50 d-inline-block border-right border-white">Editar </button>
+              <button class="w-50 d-inline-block">Ver registro</button>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 pr-5">
+            <div class="border bg-white rounded mt-4 detail-mis-cursos">
+              <p class="pr-3 pl-3 pt-3 font-weight-bold">Scrum básico</p>
+              <p class="pr-3 pl-3 pb-3"> <span class="font-weight-bold fec-ini">Fecha de inicio </span><span>20 de Marzo</span></p>
+              <button class="w-50 d-inline-block border-right border-white">Editar </button>
+              <button class="w-50 d-inline-block">Ver registro</button>
             </div>
           </div>
         </div>
-      </div>
-      <div class="row mt-4 mr-4">
-        <div class="col-12 col-md-4 pr-5">
-          <div class="border bg-white rounded mt-4 detail-mis-cursos">
-            <p class="pr-3 pl-3 pt-3 font-weight-bold">Scrum básico</p>
-            <p class="pr-3 pl-3 pb-3"> <span class="font-weight-bold fec-ini">Fecha de inicio </span><span>20 de Marzo</span></p>
-            <button class="w-50 d-inline-block border-right border-white">Editar </button>
-            <button class="w-50 d-inline-block">Ver registro</button>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 pr-5">
-          <div class="border bg-white rounded mt-4 detail-mis-cursos">
-            <p class="pr-3 pl-3 pt-3 font-weight-bold">Scrum básico</p>
-            <p class="pr-3 pl-3 pb-3"> <span class="font-weight-bold fec-ini">Fecha de inicio </span><span>20 de Marzo</span></p>
-            <button class="w-50 d-inline-block border-right border-white">Editar </button>
-            <button class="w-50 d-inline-block">Ver registro</button>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 pr-5">
-          <div class="border bg-white rounded mt-4 detail-mis-cursos">
-            <p class="pr-3 pl-3 pt-3 font-weight-bold">Scrum básico</p>
-            <p class="pr-3 pl-3 pb-3"> <span class="font-weight-bold fec-ini">Fecha de inicio </span><span>20 de Marzo</span></p>
-            <button class="w-50 d-inline-block border-right border-white">Editar </button>
-            <button class="w-50 d-inline-block">Ver registro</button>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 pr-5">
-          <div class="border bg-white rounded mt-4 detail-mis-cursos">
-            <p class="pr-3 pl-3 pt-3 font-weight-bold">Técnicas y estrategias de negociación - Harvard</p>
-            <p class="pr-3 pl-3 pb-3"> <span class="font-weight-bold fec-ini">Fecha de inicio </span><span>20 de Marzo</span></p>
-            <button class="w-50 d-inline-block border-right border-white">Editar </button>
-            <button class="w-50 d-inline-block">Ver registro</button>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 pr-5">
-          <div class="border bg-white rounded mt-4 detail-mis-cursos">
-            <p class="pr-3 pl-3 pt-3 font-weight-bold">Scrum básico</p>
-            <p class="pr-3 pl-3 pb-3"> <span class="font-weight-bold fec-ini">Fecha de inicio </span><span>20 de Marzo</span></p>
-            <button class="w-50 d-inline-block border-right border-white">Editar </button>
-            <button class="w-50 d-inline-block">Ver registro</button>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 pr-5">
-          <div class="border bg-white rounded mt-4 detail-mis-cursos">
-            <p class="pr-3 pl-3 pt-3 font-weight-bold">Scrum básico</p>
-            <p class="pr-3 pl-3 pb-3"> <span class="font-weight-bold fec-ini">Fecha de inicio </span><span>20 de Marzo</span></p>
-            <button class="w-50 d-inline-block border-right border-white">Editar </button>
-            <button class="w-50 d-inline-block">Ver registro</button>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 pr-5">
-          <div class="border bg-white rounded mt-4 detail-mis-cursos">
-            <p class="pr-3 pl-3 pt-3 font-weight-bold">Técnicas y estrategias de negociación - Harvard</p>
-            <p class="pr-3 pl-3 pb-3"> <span class="font-weight-bold fec-ini">Fecha de inicio </span><span>20 de Marzo</span></p>
-            <button class="w-50 d-inline-block border-right border-white">Editar </button>
-            <button class="w-50 d-inline-block">Ver registro</button>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 pr-5">
-          <div class="border bg-white rounded mt-4 detail-mis-cursos">
-            <p class="pr-3 pl-3 pt-3 font-weight-bold">Scrum básico</p>
-            <p class="pr-3 pl-3 pb-3"> <span class="font-weight-bold fec-ini">Fecha de inicio </span><span>20 de Marzo</span></p>
-            <button class="w-50 d-inline-block border-right border-white">Editar </button>
-            <button class="w-50 d-inline-block">Ver registro</button>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 pr-5">
-          <div class="border bg-white rounded mt-4 detail-mis-cursos">
-            <p class="pr-3 pl-3 pt-3 font-weight-bold">Scrum básico</p>
-            <p class="pr-3 pl-3 pb-3"> <span class="font-weight-bold fec-ini">Fecha de inicio </span><span>20 de Marzo</span></p>
-            <button class="w-50 d-inline-block border-right border-white">Editar </button>
-            <button class="w-50 d-inline-block">Ver registro</button>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 pr-5">
-          <div class="border bg-white rounded mt-4 detail-mis-cursos">
-            <p class="pr-3 pl-3 pt-3 font-weight-bold">Técnicas y estrategias de negociación - Harvard</p>
-            <p class="pr-3 pl-3 pb-3"> <span class="font-weight-bold fec-ini">Fecha de inicio </span><span>20 de Marzo</span></p>
-            <button class="w-50 d-inline-block border-right border-white">Editar </button>
-            <button class="w-50 d-inline-block">Ver registro</button>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 pr-5">
-          <div class="border bg-white rounded mt-4 detail-mis-cursos">
-            <p class="pr-3 pl-3 pt-3 font-weight-bold">Scrum básico</p>
-            <p class="pr-3 pl-3 pb-3"> <span class="font-weight-bold fec-ini">Fecha de inicio </span><span>20 de Marzo</span></p>
-            <button class="w-50 d-inline-block border-right border-white">Editar </button>
-            <button class="w-50 d-inline-block">Ver registro</button>
-          </div>
-        </div>
-      </div>
+    </div>
   </div>
+</div>
+<div *ngIf = "showRegistro">
+  <app-ver-registro></app-ver-registro>
 </div>
