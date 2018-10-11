@@ -90,21 +90,21 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-6 col-lg-3">
+      <div class="col-12 col-md-6 col-lg-3" *ngIf="boolSelectList">
         <div class="row">
           <div class="col-12 mt-4">
-            <div class="border bg-white rounded pl-3 pt-3 pr-3 pb-3 content-expositor">
+            <div class="border bg-white rounded pl-3 pt-3 pr-3 pb-3 content-expositor h-28" *ngIf="boolSelectList[0].option">
               <h6>Expositor</h6>
               <div class="row">
                 <div class="col-6">
-                  <button>Crear</button>
+                  <button (click)="boxCreate(this.boolSelectList[0].$key, this.boolSelectList[0].create,
+                  this.boolSelectList[0].option,this.boolSelectList[0].select)">Crear</button>
                 </div>
                 <div class="col-6">
-                  <button>Seleccionar</button>
+                  <button (click)="boxSelect(this.boolSelectList[0].$key, this.boolSelectList[0].create,
+                  this.boolSelectList[0].option,this.boolSelectList[0].select)">Seleccionar</button>
                 </div>
-
-              </div>
-              
+              </div>              
             </div>
           </div>
           <div class="col-12 mt-4">
@@ -126,43 +126,74 @@
               <div>
                 <textarea name="" id="" cols="30" rows="3"></textarea>
                 <button class=" pl-4 pr-4">Copiar enlace</button>
-
               </div>
             </div>
-
           </div>
         </div>
       </div>
     </form>
-    <form action="">
-        <div class="col-12 col-md-6 col-lg-3">
-            <div class="row">
-                <form action="">
-                    <div class="col-6">
-                        <input type="text" placeholder="arrastre imagen" class="w-100 h-100">
-                      </div>
-                      <div class="col-6">
-                        <div class="desc-curso">
-                          <input type="text" name="" placeholder="Ingresar nombre" id="" class="w-100">
-                          <input type="text" placeholder="Ingresar profesión" class="w-100">
-                          <i _ngcontent-c0="" aria-hidden="true" class="fa fa-linkedin"></i>
-                          <input type="text" placeholder="Ingresar link" name="" id="" class="w-70">
-                        </div>
-                      </div>
-                </form>        
+    <form action="" class="border-dark row">
+      <div class="col-12 offset-md-6 col-md-6 offset-lg-8 col-lg-3" *ngIf="boolSelectList">
+        <div class="border bg-white rounded pl-3 pt-3 pr-3 pb-3 content-expositor h-28" *ngIf="boolSelectList[0].create">
+            <div class="d-flex justify-content-between" (click)="boxOption(this.boolSelectList[0].$key, this.boolSelectList[0].create,
+            this.boolSelectList[0].option,this.boolSelectList[0].select)">
+                <h6 class="d-inline-block">Expositor</h6>
+                <span class="btn"> 
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                </span>
+            </div>
+          
+          <div class="row">
+            <div class="col-6">
+              <input type="text" placeholder="arrastre imagen" class="w-100 h-100">
+            </div>
+            <div class="col-6">
+              <div class="desc-curso">
+                <input type="text" name="" placeholder="Ingresar nombre" id="" class="w-100">
+                <input type="text" placeholder="Ingresar profesión" class="w-100">
+                <i _ngcontent-c0="" aria-hidden="true" class="fa fa-linkedin"></i>
+                <input type="text" placeholder="Ingresar link" name="" id="" class="w-70">
               </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center btn" (click)="boxOption(this.boolSelectList[0].$key, this.boolSelectList[0].create,
+          this.boolSelectList[0].option,this.boolSelectList[0].select)">
+            <span>Crear &nbsp;</span><i class="fa fa-plus-square-o" aria-hidden="true"></i>
+          </div>
+
         </div>
+      </div>
     </form>
-      <div class="row">
-        <div class="col-6"><img src="../../assets/images/cliente.png" alt="foto cliente"></div>
-        <div class="col-6">
-          <div class="desc-curso">
-            <p> Eduardo Alarcón</p>
-            <p> Human Centered Innovator</p>
-            <a href=""><i _ngcontent-c0="" aria-hidden="true" class="fa fa-linkedin"></i>Ver perfil</a>
+    <form action="" class="border-dark row">
+      <div class="col-12 offset-md-6 col-md-6 offset-lg-8 col-lg-3" *ngIf="boolSelectList">
+        <div class="border bg-white rounded pl-3 pt-3 pr-3 pb-3 content-expositor h-28" *ngIf="boolSelectList[0].select">
+            <div class="d-flex justify-content-between" (click)="boxOption(this.boolSelectList[0].$key, this.boolSelectList[0].create,
+            this.boolSelectList[0].option,this.boolSelectList[0].select)">
+                <h6 class="d-inline-block">Expositor</h6>
+                <span class="btn"> 
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                </span>
+            </div>
+          <div class="row">
+            <div class="col-6">
+              <input type="text" class="w-100 h-100">
+            </div>
+            <div class="col-6">
+              <div class="desc-curso">
+                <select name="" id="" class="w-100">
+                  <option value="" selected>Seleccionar Expositor</option>
+                  <option value="1">Gonzalo</option>
+                  <option value="2">Rodrigo</option>
+                </select>
+                <input type="text" placeholder="Ingresar profesión" class="w-100">
+                <i _ngcontent-c0="" aria-hidden="true" class="fa fa-linkedin"></i>
+                <input type="text" placeholder="Ingresar link" name="" id="" class="w-70">
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </form>
   </div>
 
 </div>

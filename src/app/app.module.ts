@@ -40,6 +40,7 @@ import { UserService } from './services/user.service';
 import { SharingDataService } from './services/sharing-data.service';
 import { TurnsStateService } from './services/turns-state.service';
 import { AuthAdminService } from './services/auth-admin.service';
+import { BoolSelectExpoService } from './services/bool-select-expo.service';
 
 
 
@@ -120,7 +121,8 @@ AngularFireAuthModule,
     AuthFirebaseService,
     UserService,
     SharingDataService,
-    TurnsStateService
+    TurnsStateService,
+    BoolSelectExpoService
   ],
   bootstrap: [
     AppComponent
