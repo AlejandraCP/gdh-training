@@ -1,4 +1,4 @@
-export class Curso {
+export class CursoModel {
     public $key: string;
     public cursoId: number;
     public descripcionCurso: string;
