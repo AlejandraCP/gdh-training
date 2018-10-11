@@ -41,6 +41,8 @@ import { SharingDataService } from './services/sharing-data.service';
 import { TurnsStateService } from './services/turns-state.service';
 import { AuthAdminService } from './services/auth-admin.service';
 import { BoolSelectExpoService } from './services/bool-select-expo.service';
+import { CreateTeacherService } from './services/create-teacher.service';
+import { CountersService } from './services/counters.service';
 
 
 
@@ -92,7 +94,8 @@ const routes: Routes = [
     VerRegistroComponent
   ],
   imports: [
-AngularFireAuthModule,
+  
+  AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     BrowserModule,
@@ -122,7 +125,9 @@ AngularFireAuthModule,
     UserService,
     SharingDataService,
     TurnsStateService,
-    BoolSelectExpoService
+    BoolSelectExpoService, 
+    CreateTeacherService,
+    CountersService
   ],
   bootstrap: [
     AppComponent
