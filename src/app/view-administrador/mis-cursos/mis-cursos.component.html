@@ -30,15 +30,15 @@
           </div>
         </div>
         <div class="row mt-4 mr-4">
-          <div class="col-12 col-md-4 pr-5">
+          <div class="col-12 col-md-4 pr-5"  *ngFor="let cursoItem of cursosList">
             <div class="border bg-white rounded mt-4 detail-mis-cursos">
-              <p class="pr-3 pl-3 pt-3 font-weight-bold">Scrum básico</p>
+              <p class="pr-3 pl-3 pt-3 font-weight-bold">{{cursoItem.nombreCurso}}</p>
               <p class="pr-3 pl-3 pb-3"> <span class="font-weight-bold fec-ini">Fecha de inicio </span><span>20 de Marzo</span></p>
               <button class="w-50 d-inline-block border-right border-white">Editar </button>
               <button class="w-50 d-inline-block" (click)='toggleRegistro()'>Ver registro</button>
             </div>
           </div>
-          <div class="col-12 col-md-4 pr-5">
+          <!-- <div class="col-12 col-md-4 pr-5">
             <div class="border bg-white rounded mt-4 detail-mis-cursos">
               <p class="pr-3 pl-3 pt-3 font-weight-bold">Scrum básico</p>
               <p class="pr-3 pl-3 pb-3"> <span class="font-weight-bold fec-ini">Fecha de inicio </span><span>20 de Marzo</span></p>
@@ -117,7 +117,7 @@
               <button class="w-50 d-inline-block border-right border-white">Editar </button>
               <button class="w-50 d-inline-block">Ver registro</button>
             </div>
-          </div>
+          </div> -->
         </div>
     </div>
   </div>

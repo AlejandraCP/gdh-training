@@ -25,7 +25,8 @@ export class MisCursosComponent implements OnInit {
   public currentYear: any;
   public dayOfMonthArr: any[];
   cursosList: any[];
-
+  horariosList: any[];
+  arrayArray: any[];
   constructor( public misCursosService: MisCursosService) { }
 
   public showRegistro: boolean;
@@ -96,11 +97,58 @@ export class MisCursosComponent implements OnInit {
         item.forEach(elem => {
           let x = elem.payload.toJSON();
           x["$key"] = elem.key;
+          let d = new Date(this.currentYear,10);
+          let n = monthNames[d.getMonth()];
+          
           this.cursosList.push(x);
         });
-        console.log(this.cursosList);
         
       });
+
+      this.misCursosService.getCursos()
+      .snapshotChanges()
+      .subscribe(item => {
+        this.cursosList = [];
+        this.arrayArray = [];
+        item.forEach(elem => {
+          let x = elem.payload.toJSON();
+          x['$key'] = elem.key;
+          this.misCursosService.getHorarios(elem.key)
+            .snapshotChanges()
+            .subscribe(item1 => {
+              this.horariosList = [];
+              item1.forEach(e => {
+                let y = e.payload.toJSON();
+                y['$key'] = e.key;
+                this.horariosList.push(y);
+              });
+              const result = this.horariosList.reduce(function(res, obj) {
+                return (obj.sesionId < res.sesionId) ? obj : res;
+              });
+              console.log(result);
+              
+                            
+              this.horariosList.forEach(element => {
+                
+                if (element['horario'].substring(3) === `${this.selectedValue.number}/${this.selectedValueYear.year.toString()}`) {
+                  this.horariosList.push(element);
+                  if (!this.horariosList.includes(x)) {
+                    Object.keys(x['horario']).length;  
+                    this.horariosList.push(x);
+                  }
+                }                
+                
+                // this.arrayArray.forEach(elem => {
+                //   if (!this.monthArray.includes(elem['dates'])) {
+                //     this.monthArray.push(elem['dates']);
+                //   }
+                // });                   
+              })        
+            });  
+        });
+      });
+
+
     }
   
     toggleRegistro() {
