@@ -35,6 +35,7 @@ export class CursoModel {
     public expositor_Id: number;
     public horario: [any];
     public imgCursoArchivo: string;
+    public imgNombre: string;
     public imgUrl: string;
     public lugar: string;
     public manualArchivo: string;
@@ -50,5 +51,4 @@ export class CursoModel {
     public tipoCurso_Id: number;
     public totalHoras: number;
     public totalVacantes: number;
-
 }

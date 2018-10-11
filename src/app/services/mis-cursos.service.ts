@@ -3,7 +3,6 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { AngularFirestore } from 'angularfire2/firestore';
 import * as firebase from 'firebase';
 import { CursoModel } from '../models/cursos';
-import { CursoModel } from './../models/cursos';
 
 
 @Injectable()
@@ -36,13 +35,23 @@ export class MisCursosService {
       expositor_Id: cursoModel.expositor_Id,
       horario: cursoModel.horario,
       imgCursoArchivo:cursoModel.imgCursoArchivo,
+      imgNombre: cursoModel.imgNombre,
       imgUrl: cursoModel.imgUrl,
       lugar: cursoModel.lugar,
       manualArchivo: cursoModel.manualArchivo,
       nombreManual: cursoModel.nombreManual,
-      
+      urlManual: cursoModel.urlManual,
+      nombreCertificado: cursoModel.nombreCertificado,
+      nombreCurso: cursoModel.nombreCurso,
+      numSesiones: cursoModel.numSesiones,
+      objetivos: cursoModel.objetivos,
+      silabusArchivo: cursoModel.silabusArchivo,
+      nombreSilabus: cursoModel.nombreSilabus,
+      urlSilabus: cursoModel.urlSilabus,
+      tipoCurso_Id: cursoModel.tipoCurso_Id,
+      totalHoras: cursoModel.totalHoras,
+      totalVacantes: cursoModel.totalVacantes
     })
-
   }
 
 
