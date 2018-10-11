@@ -9,6 +9,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -40,14 +41,20 @@ import { UserService } from './services/user.service';
 import { SharingDataService } from './services/sharing-data.service';
 import { TurnsStateService } from './services/turns-state.service';
 import { AuthAdminService } from './services/auth-admin.service';
+import { BoolSelectExpoService } from './services/bool-select-expo.service';
+import { CreateTeacherService } from './services/create-teacher.service';
+import { CountersService } from './services/counters.service';
 
 
 
+import { MisCursosService } from './services/mis-cursos.service';
 
 // import angular firebase
 import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 // enviroment - config firebase
 import { environment } from '../environments/environment';
@@ -91,9 +98,10 @@ const routes: Routes = [
     VerRegistroComponent
   ],
   imports: [
-AngularFireAuthModule,
+    AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
+    AngularFirestoreModule,
     BrowserModule,
     FormsModule,
     HttpModule,
@@ -120,7 +128,11 @@ AngularFireAuthModule,
     AuthFirebaseService,
     UserService,
     SharingDataService,
-    TurnsStateService
+    TurnsStateService,
+    BoolSelectExpoService, 
+    CreateTeacherService,
+    CountersService,
+    MisCursosService
   ],
   bootstrap: [
     AppComponent

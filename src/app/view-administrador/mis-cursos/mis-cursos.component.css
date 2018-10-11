@@ -26,4 +26,11 @@ select {
 .detail-mis-cursos p{
     margin-bottom: 0px;
 }
+.btn-search{
+    background-color: #1b3260;
+    color: #ebecee;
+    font-size: 13px;
+    height: 30px;
+}    
+
 

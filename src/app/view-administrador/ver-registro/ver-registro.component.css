@@ -52,3 +52,6 @@
     width: 130px;
     border: 1px solid #cccccc;
 }
+.back-page{
+    cursor: pointer;
+}
