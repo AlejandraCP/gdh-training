@@ -3,6 +3,7 @@ import { AuthAdminService } from './../services/auth-admin.service';
 
 import { CrearCursoComponent } from './crear-curso/crear-curso.component';
 import { MisCursosComponent } from './mis-cursos/mis-cursos.component';
+import { VerRegistroComponent } from './ver-registro/ver-registro.component';
 
 @Component({
   selector: 'app-view-administrador',

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MisCursosComponent } from '.././mis-cursos/mis-cursos.component';
 
 @Component({
   selector: 'app-ver-registro',
@@ -8,8 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class VerRegistroComponent implements OnInit {
 
   constructor() { }
-
-  ngOnInit() {
-  }
+  
+    public showRegistro: boolean;
+    
+      ngOnInit() {
+        this.showRegistro = true;
+      }
+    
+      toggleRegistro() {
+        this.showRegistro = !this.showRegistro;
+      }
 
 }

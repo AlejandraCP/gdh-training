@@ -4,6 +4,9 @@ import { CreateTeacherService } from './../../services/create-teacher.service';
 import { CountersService } from './../../services/counters.service';
 import { NgForm } from '@angular/forms';
 import { TeacherModel } from './../../models/teacher';
+import { MisCursosService } from './../../services/mis-cursos.service';
+import { CursoModel } from './../../models/cursos';
+
 
 
 @Component({
@@ -15,15 +18,18 @@ export class CrearCursoComponent implements OnInit {
   public boolSelectList: any[];
   public teacherList: any[];
   public counterList: any[];
+  public cursosList: any[];
 
   constructor( 
     public boolSelectExpoService : BoolSelectExpoService,
     public createTeacherService : CreateTeacherService,
-    public counterService: CountersService
+    public counterService: CountersService,
+    public misCursosService: MisCursosService
     ) { }
 
   date
   ngOnInit() {
+    // get list change box teacher
     this.boolSelectExpoService.getBoolSelect()
       .snapshotChanges()
       .subscribe(item => {
@@ -35,6 +41,7 @@ export class CrearCursoComponent implements OnInit {
         })        
     });
     
+  // get list teacher
     this.createTeacherService.getTeachers()
       .snapshotChanges()
       .subscribe(item => {
@@ -47,6 +54,7 @@ export class CrearCursoComponent implements OnInit {
         // console.log(this.teacherList);
     });
 
+    // get list counter
     this.counterService.getCounters()
       .snapshotChanges()
       .subscribe(item => {
@@ -59,6 +67,19 @@ export class CrearCursoComponent implements OnInit {
         // console.log(this.counterList);
     });
 
+    // get list courses
+    this.misCursosService.getCursos()
+      .snapshotChanges()
+      .subscribe(item => {
+        this.cursosList = [];
+        item.forEach(elem => {
+          let x = elem.payload.toJSON();
+          x['$key'] = elem.key;
+          this.cursosList.push(x)
+        })  
+        console.log(this.cursosList);
+          
+    });
 
   }
 
