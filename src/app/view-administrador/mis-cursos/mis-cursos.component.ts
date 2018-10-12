@@ -29,7 +29,7 @@ export class MisCursosComponent implements OnInit {
   constructor( public misCursosService: MisCursosService) { }
 
   public showRegistro: boolean;
-  
+
     ngOnInit() {
       this.showRegistro = false;
 
@@ -60,7 +60,7 @@ export class MisCursosComponent implements OnInit {
         { id: 11, month: monthNames[10], number: '11' },
         { id: 12, month: monthNames[11], number: '12' }
       ];
-      
+
       this.years = [
         { id: 15, year: '2018' },
         { id: 16, year: '2019' },
@@ -91,24 +91,24 @@ export class MisCursosComponent implements OnInit {
 
       this.misCursosService.getCursos()
       .snapshotChanges()
-      .subscribe(item => {   
+      .subscribe(item => {
         this.cursosList = [];
         item.forEach(elem => {
           let x = elem.payload.toJSON();
           x["$key"] = elem.key;
           this.cursosList.push(x);
         });
-        console.log(this.cursosList);
-        
+        // console.log(this.cursosList);
+
       });
     }
-  
+
     toggleRegistro() {
       this.showRegistro = !this.showRegistro;
     }
 
     crearCurso(){
-      
+
     }
 
 }

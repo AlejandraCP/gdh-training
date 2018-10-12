@@ -22,7 +22,7 @@ export class CreateTeacherService {
       linkedIn: teacherModel.linkedIn,
       nombreExpositor: teacherModel.nombreExpositor,
       perfilExpositor: teacherModel.perfilExpositor
-    })
+    });
   }
 
   deleteTeacher($key: string) {

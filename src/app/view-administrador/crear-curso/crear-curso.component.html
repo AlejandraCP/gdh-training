@@ -10,16 +10,29 @@
 </nav>
 <div class="intraining-content">
   <div class="container-fluid">
-    <form action="" class="border-dark row">
+    <form action="" #courseForm='ngForm' class="border-dark row"(ngSubmit)="onSubmitCourse(courseForm)">
       <div class="col-12 col-md-12 col-lg-5 mt-4">
         <div class="border bg-white rounded pl-3 pt-3 pr-3 pb-3 container">
-          <h6 class="d-inline">Curso</h6> <input type="text" placeholder="Ingresa título del curso">
+          <h6 class="d-inline">Curso</h6>
+          <!-- nombreCurso -->
+          <input type="text" name='nombreCurso' #nombreCurso='ngModel' [(ngModel)]='misCursosService.newCourse.nombreCurso' placeholder="Ingresa título del curso">
           <div class="m-3 row">
+            <!-- hidden key -->
+            <input type='hidden' name='$key' #$key='ngModel' [(ngModel)]='misCursosService.newCourse.$key'>
+            <!-- hidden curso id -->
+            <input type='hidden' name='cursoId' #cursoId='ngModel' [(ngModel)]='misCursosService.newCourse.cursoId'>
             <!-- change type to save img -->
-            <input class="col-12 img-course" type="text" placeholder="arrastrar imagen">
+            <!-- img curso archivo -->
+            <input class="col-12 img-course" type="text" name='imgCursoArchivo' #imgCursoArchivo='ngModel'
+             [(ngModel)]='misCursosService.newCourse.imgCursoArchivo' placeholder="arrastrar imagen">
+             <!-- hidden imgNombre -->
+            <input type='hidden' name='imgNombre' #imgNombre='ngModel' [(ngModel)]='misCursosService.newCourse.imgNombre'>
+             <!-- hidden imgUrl -->
+            <input type='hidden' name='imgUrl' #imgUrl='ngModel' [(ngModel)]='misCursosService.newCourse.imgUrl'>
           </div>
           <div class="m-3 row">
-            <input class="col-12 resume-course" type="text" placeholder="Ingresar resumen del curso">
+            <!-- descripcionCurso -->
+            <input class="col-12 resume-course" type="text" name='descripcionCurso' #descripcionCurso='ngModel' [(ngModel)]='misCursosService.newCourse.descripcionCurso'   placeholder="Ingresar resumen del curso">
           </div>
         </div>
       </div>
@@ -30,15 +43,18 @@
               <h6>Información</h6>
               <div class="desc-curso">
                 <p>Total vacantes</p>
-                <input type="text" name="vacantes" id="">
+                <!-- totalVacantes -->
+                <input type="text" name='totalVacantes' #totalVacantes='ngModel' [(ngModel)]='misCursosService.newCourse.totalVacantes'>
               </div>
               <div class="desc-curso">
                 <p>Certificación</p>
-                <input type="text">
+                <!-- nombreCertificado -->
+                <input type="text" name='nombreCertificado' #nombreCertificado='ngModel' [(ngModel)]='misCursosService.newCourse.nombreCertificado'>
               </div>
               <div class="desc-curso">
                 <p>Objetivos</p>
-                <input type="text">
+                <!-- objetivos -->
+                <input type="text" name='objetivos' #objetivos='ngModel' [(ngModel)]='misCursosService.newCourse.objetivos'>
               </div>
             </div>
           </div>
@@ -47,15 +63,18 @@
               <h6>Planificación del curso</h6>
               <div class="desc-curso">
                 <p>Lugar</p>
-                <input type="text">
+                <!-- lugar -->
+                <input type="text" name='lugar' #lugar='ngModel' [(ngModel)]='misCursosService.newCourse.lugar'>
               </div>
               <div class="desc-curso">
                 <p>Duración</p>
-                <input type="text" name="" id="">
+                <!-- numsesiones -->
+                <input type="text" name='numSesiones' #numSesiones='ngModel' [(ngModel)]='misCursosService.newCourse.numSesiones'>
               </div>
               <div class="desc-curso">
                 <p>Fechas</p>
                 <div class="input-group">
+                  <!-- fechas CAMBIAR A ARRAY date tiene el valor -->
                   <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="date" ngbDatepicker #d="ngbDatepicker">
                   <div class="input-group-append">
                     <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
@@ -68,14 +87,17 @@
               </div>
               <div class="desc-curso">
                 <p>Horario</p>
+                <!-- uniendo sale horario -->
                 <div class="d-inline-flex">
-                  <input type="text" placeholder="00:00" class="d-inline w-25">
-                  <select name="" id="" class="d-inline">
+                  <!-- horario hora -->
+                  <input type="text" name="hour" [(ngModel)]="hour" placeholder="00:00" class="d-inline w-25">
+                  <select name="initialAmPm" [(ngModel)]="initialAmPm" class="d-inline">
                     <option value="a.m">a.m</option>
                     <option value="p.m">p.m</option>
                   </select>
-                  <input type="text" placeholder="00:00" class="d-inline w-25">
-                  <select name="" id="" class="d-inline">
+                  <!-- horario minutos -->
+                  <input type="text" name="minute" [(ngModel)]="minute" placeholder="00:00" class="d-inline w-25">
+                  <select name="finishAmPm" [(ngModel)]="finishAmPm" class="d-inline">
                     <option value="a.m">a.m</option>
                     <option value="p.m">p.m</option>
                   </select>
@@ -84,7 +106,8 @@
               </div>
               <div class="desc-curso">
                 <p>Total de horas</p>
-                <input type="text">
+                <!-- totalHoras -->
+                <input type="text" name='totalHoras' #totalHoras='ngModel' [(ngModel)]='misCursosService.newCourse.totalHoras'>
               </div>
             </div>
           </div>
@@ -95,6 +118,10 @@
           <div class="col-12 mt-4">
             <div class="border bg-white rounded pl-3 pt-3 pr-3 pb-3 content-expositor h-28"  [ngClass]="{'v-hidden': boolSelectList[0].option !== true}">
               <h6>Expositor</h6>
+              <!-- hidden expositor id -->
+              <input type="hidden" class="w-70" name='expositor_Id' #expositor_Id='ngModel' [(ngModel)]='misCursosService.newCourse.expositor_Id'>
+              <!-- hidden tipocursoid -->
+              <input type="hidden" class="w-70" name='tipoCurso_Id' #tipoCurso_Id='ngModel' [(ngModel)]='misCursosService.newCourse.tipoCurso_Id'>
               <div class="row">
                 <div class="col-6">
                   <button (click)="boxCreate(this.boolSelectList[0].$key, this.boolSelectList[0].create,
@@ -104,7 +131,7 @@
                   <button (click)="boxSelect(this.boolSelectList[0].$key, this.boolSelectList[0].create,
                   this.boolSelectList[0].option,this.boolSelectList[0].select)">Seleccionar</button>
                 </div>
-              </div>              
+              </div>
             </div>
           </div>
           <div class="col-12 mt-4">
@@ -112,17 +139,27 @@
               <h6>Adjuntar</h6>
               <div>
                 <span>Syllabus</span>
-                <input type="text" class="w-70">
+                <!-- silabusArchivo -->
+                <input type="text" class="w-70" name='silabusArchivo' #silabusArchivo='ngModel' [(ngModel)]='misCursosService.newCourse.silabusArchivo'>
+                <!-- silabusNombre hidden -->
+                <input type="hidden" class="w-70" name='nombreSilabus' #nombreSilabus='ngModel' [(ngModel)]='misCursosService.newCourse.nombreSilabus'>
+                <!-- hidden url silabus -->
+                <input type="hidden" class="w-70" name='urlSilabus' #urlSilabus='ngModel' [(ngModel)]='misCursosService.newCourse.urlSilabus'>
               </div>
               <div>
                 <span>Manual</span>
-                <input type="text" class="w-70">
+                <!-- manualArchivo -->
+                <input type="text" class="w-70" name='manualArchivo' #manualArchivo='ngModel' [(ngModel)]='misCursosService.newCourse.manualArchivo'>
+                <!-- nombreManual hidden -->
+                <input type="hidden" class="w-70" name='nombreManual' #nombreManual='ngModel' [(ngModel)]='misCursosService.newCourse.nombreManual'>
+                <!-- urlManual hidden -->
+                <input type="hidden" class="w-70" name='urlManual' #urlManual='ngModel' [(ngModel)]='misCursosService.newCourse.urlManual'>
               </div>
             </div>
           </div>
           <div class="col-12 mt-4">
             <div class="border bg-white rounded pl-3 pt-3 pr-3 pb-3">
-              <button class=" pl-4 pr-4">Crear curso</button>
+              <button class=" pl-4 pr-4" type='submit'>Crear curso</button>
               <div>
                 <textarea name="" id="" cols="30" rows="3"></textarea>
                 <button class=" pl-4 pr-4">Copiar enlace</button>
@@ -138,10 +175,10 @@
             <div class="d-flex justify-content-between" (click)="boxOption(this.boolSelectList[0].$key, this.boolSelectList[0].create,
             this.boolSelectList[0].option,this.boolSelectList[0].select)">
                 <h6 class="d-inline-block">Expositor</h6>
-                <span class="btn"> 
+                <span class="btn">
                     <i class="fa fa-trash-o" aria-hidden="true"></i>
                 </span>
-            </div>          
+            </div>
           <div class="row">
             <div class="col-6">
               <input type='hidden' name='$key' #$key='ngModel' [(ngModel)]='createTeacherService.newTeacher.$key'>
@@ -170,7 +207,7 @@
             <div class="d-flex justify-content-between" (click)="boxOption(this.boolSelectList[0].$key, this.boolSelectList[0].create,
             this.boolSelectList[0].option,this.boolSelectList[0].select)">
                 <h6 class="d-inline-block">Expositor</h6>
-                <span class="btn"> 
+                <span class="btn">
                     <i class="fa fa-trash-o" aria-hidden="true"></i>
                 </span>
             </div>
