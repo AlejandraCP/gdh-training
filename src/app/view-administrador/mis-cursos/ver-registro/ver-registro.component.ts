@@ -19,7 +19,6 @@ export class VerRegistroComponent implements OnInit {
                {
                 this.route.params.subscribe( parametros => {
                   console.log(parametros);
-
                   this.inscripcionesService.getInscripciones()
                   .snapshotChanges()
                   .subscribe(item => {
