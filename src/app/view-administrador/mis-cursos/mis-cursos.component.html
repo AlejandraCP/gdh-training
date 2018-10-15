@@ -14,28 +14,31 @@
             <h6>Elige tus cursos por mes y año</h6>
             <div class="row">
               <div class="col-4">
-                <select class="custom-select">
-                  <option >Mes</option>
+                <select [(ngModel)]="selectedValue" (ngModelChange)="selectMonth($event)" class="custom-select">
+                  <option *ngFor="let c of months" [ngValue]="c" [selected]='c.id === selectedValue.id'
+                      class="select-month py-4">{{c.month}}</option>
                 </select>
               </div>
               <div class="col-4">
-                <select class="custom-select">
-                  <option >Año</option>
+                <select *ngIf="years" [(ngModel)]="selectedValueYear" (ngModelChange)="selectYear($event)"
+                    class="custom-select">
+                    <option *ngFor="let c of years" [ngValue]="c" [selected]='c.year === selectedValueYear'
+                        class="select-year py-4">{{c.year}}</option>
                 </select>
               </div>
               <div class="col-4">
-                <button class="btn btn-search font-weight-bold">Buscar</button>
+                <button class="btn btn-search font-weight-bold" (click)='getCursoMes(selectedValue, selectedValueYear)'>Buscar</button>
               </div>
             </div>
           </div>
         </div>
         <div class="row mt-4 mr-4">
-          <div class="col-12 col-md-4 pr-5"  *ngFor="let cursoItem of cursosList">
+          <div *ngFor="let cursoItem of cursosList" class="col-12 col-md-4 pr-5" >
             <div class="border bg-white rounded mt-4 detail-mis-cursos">
               <p class="pr-3 pl-3 pt-3 font-weight-bold">{{cursoItem.nombreCurso}}</p>
-              <p class="pr-3 pl-3 pb-3"> <span class="font-weight-bold fec-ini">Fecha de inicio </span><span>20 de Marzo</span></p>
+              <p class="pr-3 pl-3 pb-3"> <span class="font-weight-bold fec-ini">Fecha de inicio </span><span>{{cursoItem.diaInicio}} de {{cursoItem.mesInicio}}</span></p>
               <button class="w-50 d-inline-block border-right border-white">Editar </button>
-              <button class="w-50 d-inline-block" (click)='toggleRegistro()'>Ver registro</button>
+              <button class="w-50 d-inline-block" (click)='toggleRegistro()' [routerLink]="['/registros',cursoItem.cursoId,'administrador']">  Ver registro</button>
             </div>
           </div>
           <!-- <div class="col-12 col-md-4 pr-5">

@@ -42,6 +42,7 @@ import { SharingDataService } from './services/sharing-data.service';
 import { TurnsStateService } from './services/turns-state.service';
 import { AuthAdminService } from './services/auth-admin.service';
 import { MisCursosService } from './services/mis-cursos.service';
+import { InscripcionesService } from './services/inscripciones.service';
 
 // import angular firebase
 import { AngularFireModule } from 'angularfire2';
@@ -56,7 +57,7 @@ import { environment } from '../environments/environment';
 // guard
 import { AuthGuard } from './guards/auth.guard';
 import { SidebarDirective } from './directives/sidebar.directive';
-import { VerRegistroComponent } from './view-administrador/ver-registro/ver-registro.component';
+import { VerRegistroComponent } from './view-administrador/mis-cursos/ver-registro/ver-registro.component';
 
 
 const routes: Routes = [
@@ -66,8 +67,9 @@ const routes: Routes = [
   { path: 'login', component: LoginFbComponent },
   { path: 'coordi', component: ViewCoorComponent, canActivate: [AuthGuard] },
   { path: 'administrador', component: ViewAdministradorComponent, canActivate: [AuthGuard] },
+  { path: 'registros/:id/:pag', component: VerRegistroComponent, canActivate: [AuthGuard] },
   { path: 'dev', component: ViewDevComponent, canActivate: [AuthGuard]},
-  {path: '**', component: NotFoundPageComponent}
+  { path: '**', component: NotFoundPageComponent}
 ];
 
 
@@ -123,7 +125,8 @@ const routes: Routes = [
     UserService,
     SharingDataService,
     TurnsStateService,
-    MisCursosService
+    MisCursosService,
+    InscripcionesService
   ],
   bootstrap: [
     AppComponent
