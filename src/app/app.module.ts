@@ -44,6 +44,8 @@ import { AuthAdminService } from './services/auth-admin.service';
 import { BoolSelectExpoService } from './services/bool-select-expo.service';
 import { CreateTeacherService } from './services/create-teacher.service';
 import { CountersService } from './services/counters.service';
+import { CoursesService } from './services/courses.service';
+
 
 
 
@@ -63,6 +65,7 @@ import { environment } from '../environments/environment';
 import { AuthGuard } from './guards/auth.guard';
 import { SidebarDirective } from './directives/sidebar.directive';
 import { VerRegistroComponent } from './view-administrador/ver-registro/ver-registro.component';
+import { CoursesCoorComponent } from './courses-coor/courses-coor.component';
 
 
 const routes: Routes = [
@@ -73,6 +76,7 @@ const routes: Routes = [
   { path: 'coordi', component: ViewCoorComponent, canActivate: [AuthGuard] },
   { path: 'administrador', component: ViewAdministradorComponent, canActivate: [AuthGuard] },
   { path: 'dev', component: ViewDevComponent, canActivate: [AuthGuard]},
+  { path: 'coor', component: CoursesCoorComponent, canActivate: [AuthGuard]},
   {path: '**', component: NotFoundPageComponent}
 ];
 
@@ -95,7 +99,8 @@ const routes: Routes = [
     MisCursosComponent,
     SidebarDirective,
     ViewUserHomeComponent,
-    VerRegistroComponent
+    VerRegistroComponent,
+    CoursesCoorComponent
   ],
   imports: [
     AngularFireAuthModule,
@@ -132,7 +137,8 @@ const routes: Routes = [
     BoolSelectExpoService, 
     CreateTeacherService,
     CountersService,
-    MisCursosService
+    MisCursosService,
+    CoursesService
   ],
   bootstrap: [
     AppComponent

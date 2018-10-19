@@ -1,0 +1,25 @@
+nav span {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.nav-tabs {
+  border-bottom: none;
+}
+
+.btn-blue {
+  background-color: #e1e1e4;
+}
+
+.nav-link.active {
+  color: #dee2e6  ;
+  background-color: #214283;
+  border-color: #dee2e6 #dee2e6 #fff;
+}
+
+a {
+  color: #214283;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: transparent;
+}
