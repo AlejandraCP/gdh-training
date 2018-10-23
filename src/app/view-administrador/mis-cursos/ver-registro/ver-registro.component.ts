@@ -3,6 +3,8 @@ import { ActivatedRoute } from "@angular/router";
 
 //services
 import { InscripcionesService } from '../../../services/inscripciones.service';
+import { UserService } from '../../../services/user.service';
+import { MisCursosService } from '../../../services/mis-cursos.service';
 
 @Component({
   selector: 'app-ver-registro',
@@ -12,41 +14,55 @@ import { InscripcionesService } from '../../../services/inscripciones.service';
 export class VerRegistroComponent implements OnInit {
 
   inscripcionList: any[];
-  inscripcionCursoList: any[];
+  inscripcionSubjectList: any[];
+  userList: any[];
+  registerList: any[];
+  subjectsList: any[];
+  subject: {
+    name: string,
+    month: string,
+    numHours: number
+  };
 
   constructor( public inscripcionesService:  InscripcionesService,
+               public usersService: UserService,
+               public misCursosService: MisCursosService,
                public route: ActivatedRoute ) 
                {
                 this.route.params.subscribe( parametros => {
-                  console.log(parametros);
                   this.inscripcionesService.getInscripciones()
                   .snapshotChanges()
                   .subscribe(item => {
                     this.inscripcionList = [];
                     item.forEach(elem => {
                       let x = elem.payload.toJSON();
-                      x['$key'] = elem.key;
-                      this.inscripcionesService.getInscripcionesCurso(elem.key)
-                        .snapshotChanges()
-                        .subscribe(item1 => {
-                          this.inscripcionCursoList = [];
-                          item1.forEach(e => {
-                            let y = e.payload.toJSON();
-                            y['$key'] = e.key;
-                            this.inscripcionCursoList.push(y);
-                          });
-                          let result = this.inscripcionCursoList.reduce(function(res, obj) {
-                            return (obj.sesionId < res.sesionId) ? obj : res;
-                          }); 
-                          this.inscripcionCursoList.forEach(element => {
-                          
-                              if (!this.inscripcionList.includes(x)) {
-                                this.inscripcionList.push(x)
-                              }
-                          });                    
-                        });   
+                      x['$key'] = elem.key; 
+                      this.inscripcionList.push(x);
+                      this.inscripcionSubjectList = this.inscripcionList.filter(e =>e.curso_id == parseInt(parametros.id)); 
                     });
                   });  
+
+                  this.usersService.getUser()
+                  .snapshotChanges()
+                  .subscribe( itemUser => {
+                    this.userList = [];
+                    itemUser.forEach( elemUser => {
+                      let x = elemUser.payload.toJSON();
+                      x['$key'] = elemUser.key;
+                      this.userList.push(x);
+                    });
+                  });
+
+                  this.misCursosService.getCursos()
+                  .snapshotChanges()
+                  .subscribe( itemUser => {
+                    this.subjectsList = [];
+                    itemUser.forEach( elemUser => {
+                      let x = elemUser.payload.toJSON();
+                      x['$key'] = elemUser.key;
+                      this.subjectsList.push(x);
+                    });
+                  });
                 });
                }
   

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewHomeComponent } from './view-home.component';
+import { ListXlsComponent } from './list-xls.component';
 
-describe('ViewHomeComponent', () => {
-  let component: ViewHomeComponent;
-  let fixture: ComponentFixture<ViewHomeComponent>;
+describe('ListXlsComponent', () => {
+  let component: ListXlsComponent;
+  let fixture: ComponentFixture<ListXlsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewHomeComponent ]
+      declarations: [ ListXlsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ViewHomeComponent);
+    fixture = TestBed.createComponent(ListXlsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

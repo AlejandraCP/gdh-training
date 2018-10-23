@@ -34,8 +34,7 @@ export class MisCursosComponent implements OnInit {
       this.showRegistro = false;
 
       this.monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-        "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre"
-      ];
+        "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre"];
 
       this.days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 

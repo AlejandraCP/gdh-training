@@ -11,16 +11,10 @@ import * as MicrosoftGraph from "@microsoft/microsoft-graph-types"
 // services
 import { HomeService } from './home.service';
 import { AuthService } from '../auth/auth.service';
-import { TurnosService } from '../services/turnos.service';
-import { InscriptionService } from '../services/inscription.service';
-import { ReportService } from '../services/report.service';
 
 
 // models
 import { InscripcionModel } from '../models/inscriptions';
-import { ReportsModel } from '../models/reports';
-
-
 
 @Component({
   selector: 'app-home',
@@ -62,7 +56,7 @@ import { ReportsModel } from '../models/reports';
   </div>
 </div>
   `,
-  providers: [InscriptionService]
+  providers: []
 })
 export class HomeComponent implements OnInit, OnDestroy {
   events: MicrosoftGraph.Event[];
@@ -86,10 +80,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   
   constructor(
     private homeService: HomeService,
-    private authService: AuthService,
-    private turnoService: TurnosService,
-    private inscriptionService: InscriptionService,
-    private reportService: ReportService
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -104,30 +95,6 @@ export class HomeComponent implements OnInit, OnDestroy {
       localStorage.setItem('name', name);
       localStorage.setItem('userName', userName);
     });
-
-    // get inscriptions
-    this.inscriptionService.getInscriptions()
-    .snapshotChanges()
-    .subscribe(item => {
-      this.inscriptionList = [];
-      item.forEach(elem => {
-        let x = elem.payload.toJSON();
-        x["$key"] = elem.key;
-        this.inscriptionList.push(x);
-      });
-    });    
-
-    // get reports
-    this.reportService.getReports()
-    .snapshotChanges()
-    .subscribe(item => {
-      this.reportList = [];
-      item.forEach(elem => {
-        let x = elem.payload.toJSON();
-        x['$key'] = elem.key;
-        this.reportList.push(x)
-      })
-    })
   }
 
   ngOnDestroy() {

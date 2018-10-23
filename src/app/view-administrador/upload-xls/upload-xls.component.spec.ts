@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewDevComponent } from './view-dev.component';
+import { UploadXlsComponent } from './upload-xls.component';
 
-describe('ViewDevComponent', () => {
-  let component: ViewDevComponent;
-  let fixture: ComponentFixture<ViewDevComponent>;
+describe('UploadXlsComponent', () => {
+  let component: UploadXlsComponent;
+  let fixture: ComponentFixture<UploadXlsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewDevComponent ]
+      declarations: [ UploadXlsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ViewDevComponent);
+    fixture = TestBed.createComponent(UploadXlsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
