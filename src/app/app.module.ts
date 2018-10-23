@@ -27,7 +27,7 @@ import { LoginAdminComponent } from './login-admin/login-admin.component';
 import { ViewAdministradorComponent } from './view-administrador/view-administrador.component';
 import { CrearCursoComponent } from './view-administrador/crear-curso/crear-curso.component';
 import { MisCursosComponent } from './view-administrador/mis-cursos/mis-cursos.component';
-
+import { VerRegistroComponent } from './view-administrador/ver-registro/ver-registro.component';
 
 import { HttpService } from './shared/http.service';
 import { AuthService } from './auth/auth.service';
@@ -64,7 +64,6 @@ import { environment } from '../environments/environment';
 // guard
 import { AuthGuard } from './guards/auth.guard';
 import { SidebarDirective } from './directives/sidebar.directive';
-import { VerRegistroComponent } from './view-administrador/ver-registro/ver-registro.component';
 import { CoursesCoorComponent } from './courses-coor/courses-coor.component';
 
 
