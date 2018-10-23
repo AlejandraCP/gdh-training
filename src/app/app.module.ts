@@ -36,6 +36,14 @@ import { AuthFirebaseService } from './services/auth-firebase.service';
 import { UserService } from './services/user.service';
 import { SharingDataService } from './services/sharing-data.service';
 import { AuthAdminService } from './services/auth-admin.service';
+import { BoolSelectExpoService } from './services/bool-select-expo.service';
+import { CreateTeacherService } from './services/create-teacher.service';
+import { CountersService } from './services/counters.service';
+import { CoursesService } from './services/courses.service';
+
+
+
+
 import { MisCursosService } from './services/mis-cursos.service';
 import { InscripcionesService } from './services/inscripciones.service';
 
@@ -54,6 +62,9 @@ import { AuthGuard } from './guards/auth.guard';
 import { SidebarDirective } from './directives/sidebar.directive';
 import { UploadXlsComponent } from './view-administrador/upload-xls/upload-xls.component';
 import { ListXlsComponent } from './view-administrador/list-xls/list-xls.component';
+import { VerRegistroComponent } from './view-administrador/ver-registro/ver-registro.component';
+import { CoursesCoorComponent } from './courses-coor/courses-coor.component';
+
 
 const routes: Routes = [
   { path: 'login', component: LoginAdminComponent },
@@ -63,7 +74,8 @@ const routes: Routes = [
   { path: 'administrador', component: ViewAdministradorComponent, canActivate: [AuthGuard] },
   { path: 'registros/:id/:pag', component: VerRegistroComponent, canActivate: [AuthGuard] },
   { path: 'attendance', component: ViewAttendanceComponent },
-  { path: '**', component: NotFoundPageComponent}
+  { path: '**', component: NotFoundPageComponent},
+  { path: 'coor', component: CoursesCoorComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({
@@ -82,9 +94,7 @@ const routes: Routes = [
     SidebarDirective,
     ViewUserHomeComponent,
     VerRegistroComponent,
-    ViewAttendanceComponent,
-    UploadXlsComponent,
-    ListXlsComponent
+    CoursesCoorComponent
   ],
   imports: [
     AngularFireAuthModule,
@@ -112,8 +122,11 @@ const routes: Routes = [
     AuthFirebaseService,
     UserService,
     SharingDataService,
+    BoolSelectExpoService, 
+    CreateTeacherService,
+    CountersService,
     MisCursosService,
-    InscripcionesService
+    CoursesService
   ],
   bootstrap: [
     AppComponent

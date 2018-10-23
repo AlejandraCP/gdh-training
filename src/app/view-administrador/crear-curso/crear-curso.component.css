@@ -13,3 +13,16 @@
 .w-70 {
   width: 70% !important;
 }
+
+.h-28 {
+  height: 28vh;
+}
+
+.v-hidden {
+  visibility: hidden;
+}
+
+.p-absolute {
+  position: absolute;
+  top: -652px;
+}

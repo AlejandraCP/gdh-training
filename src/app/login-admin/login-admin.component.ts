@@ -29,6 +29,10 @@ export class LoginAdminComponent implements OnInit {
           auth.email === 'administrador@inteligogroup.com'
         ) {
           this.router.navigate(['/administrador']);
+        } else if (
+          auth.email === 'coor@inteligogroup.com'
+        ) {
+          this.router.navigate(['coor']);
         }        
       })      
     })

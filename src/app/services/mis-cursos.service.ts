@@ -9,6 +9,7 @@ import { CursoModel } from '../models/cursos';
 export class MisCursosService {
   cursosList: AngularFireList<any>;
   horariosList: AngularFireList<any>;
+  newCourse: CursoModel = new CursoModel();
 
   private CARPETA_IMAGENES = 'img';
 
@@ -32,6 +33,31 @@ export class MisCursosService {
   //   this.db.collection(`/${this.CARPETA_IMAGENES}`).add(cursoImg);
   // }
 
+  insertCourse(cursoModel: CursoModel) {
+    this.cursosList.push({
+      cursoId: cursoModel.cursoId,
+      descripcionCurso: cursoModel.descripcionCurso,
+      expositor_Id: cursoModel.expositor_Id,
+      horario: cursoModel.horario,
+      imgCursoArchivo:cursoModel.imgCursoArchivo,
+      imgNombre: cursoModel.imgNombre,
+      imgUrl: cursoModel.imgUrl,
+      lugar: cursoModel.lugar,
+      manualArchivo: cursoModel.manualArchivo,
+      nombreManual: cursoModel.nombreManual,
+      urlManual: cursoModel.urlManual,
+      nombreCertificado: cursoModel.nombreCertificado,
+      nombreCurso: cursoModel.nombreCurso,
+      numSesiones: cursoModel.numSesiones,
+      objetivos: cursoModel.objetivos,
+      silabusArchivo: cursoModel.silabusArchivo,
+      nombreSilabus: cursoModel.nombreSilabus,
+      urlSilabus: cursoModel.urlSilabus,
+      tipoCurso_Id: cursoModel.tipoCurso_Id,
+      totalHoras: cursoModel.totalHoras,
+      totalVacantes: cursoModel.totalVacantes
+    })
+  }
 
 
 
