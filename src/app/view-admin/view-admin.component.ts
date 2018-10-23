@@ -385,7 +385,6 @@ export class ViewAdminComponent implements OnInit {
                 } else if (isNaN(this.attendancePercent)){
                   this.attendanceBool = false
                 }
-
                 
                 if(isNaN(this.noAttendancePercent) === false) {
                   this.noAttendanceBool = true
@@ -434,7 +433,6 @@ export class ViewAdminComponent implements OnInit {
         });
       });
   }
-
 
   updateTurnSchedule(hourStart, hourEnd){
     this.turnosService.deleteTurns();

@@ -31,12 +31,8 @@ export class CoursesCoorComponent implements OnInit {
         let x = elem.payload.toJSON();
         x['$key'] = elem.key;
         this.cursoList.push(x)
-        console.log(x);
-        
+        console.log(x);        
       })  
-      // console.log(this.cursoList);
-          
     })
   }
-
 }
