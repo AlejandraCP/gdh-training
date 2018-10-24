@@ -1,12 +1,10 @@
 import { Injectable } from '@angular/core';
-// import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';    
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs';
 import { UserGDH } from '../models/cursosGDH';
 
 @Injectable()
 export class CoursesService {
-
   cursosList: AngularFireList<any>;
   cursosListGroup: AngularFireList<any>;
   cursosListS1: AngularFireList<any> = this.firebase.list('cursos/sesion1');
@@ -16,8 +14,6 @@ export class CoursesService {
   newUser: UserGDH = new UserGDH();
 
   constructor( private firebase: AngularFireDatabase) { }
-
-  // this.cursosListS1 = this.firebase.list('cursos/sesion1');
 
   getCursos() {
     this.cursosList = this.firebase.list('cursos');
