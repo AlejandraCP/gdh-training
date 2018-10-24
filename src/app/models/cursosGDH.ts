@@ -4,6 +4,10 @@ export class UserGDH {
   public nombre: string;
   public area: string;
   public puesto: string;
+  public departamento: string;
+  public codigo: string;
+  public vp: string;
+  public division: string
   public asistencia: boolean;
   public correo: string;
   public mesCapacitacion: string;

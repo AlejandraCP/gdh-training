@@ -35,7 +35,11 @@ export class CoursesService {
       correo: newUser.correo,
       mesCapacitacion: newUser.mesCapacitacion,
       numHoras: newUser.numHoras,
-      nombreCurso: newUser.nombreCurso
+      nombreCurso: newUser.nombreCurso,
+      vp: newUser.vp,
+      division: newUser.division,
+      departamento: newUser.departamento,
+      codigo: newUser.codigo
     })
   }
 
@@ -49,7 +53,11 @@ export class CoursesService {
       correo: newUser.correo,
       mesCapacitacion: newUser.mesCapacitacion,
       numHoras: newUser.numHoras,
-      nombreCurso: newUser.nombreCurso
+      nombreCurso: newUser.nombreCurso,
+      vp: newUser.vp,
+      division: newUser.division,
+      departamento: newUser.departamento,
+      codigo: newUser.codigo
     })
   }
 
@@ -63,7 +71,11 @@ export class CoursesService {
       correo: newUser.correo,
       mesCapacitacion: newUser.mesCapacitacion,
       numHoras: newUser.numHoras,
-      nombreCurso: newUser.nombreCurso
+      nombreCurso: newUser.nombreCurso,
+      vp: newUser.vp,
+      division: newUser.division,
+      departamento: newUser.departamento,
+      codigo: newUser.codigo
     })
   }
 
@@ -77,7 +89,11 @@ export class CoursesService {
       correo: newUser.correo,
       mesCapacitacion: newUser.mesCapacitacion,
       numHoras: newUser.numHoras,
-      nombreCurso: newUser.nombreCurso
+      nombreCurso: newUser.nombreCurso,
+      vp: newUser.vp,
+      division: newUser.division,
+      departamento: newUser.departamento,
+      codigo: newUser.codigo
     })
   }
 

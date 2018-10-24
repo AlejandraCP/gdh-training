@@ -38,25 +38,44 @@
         </div>
       </div>
       <div class="form-group col-12 row">
-          <label for="inputEmail3" class="col-2 col-form-label font-weight-bold">Puesto</label>
+        <label for="inputEmail3" class="col-2 col-form-label font-weight-bold">Puesto</label>
+        <div class="col-10">
+          <input type="text" name="puesto" #puesto='ngModel' class="form-control" [(ngModel)]='coursesServices.newUser.puesto'>
+        </div>
+      </div>
+      <div class="form-group col-12 row">
+        <label for="inputEmail3" class="col-2 col-form-label font-weight-bold">Área</label>
+        <div class="col-10">
+          <input type="text" name="area" #area='ngModel' class="form-control" [(ngModel)]='coursesServices.newUser.area'>
+        </div>
+      </div>
+      <div class="form-group col-12 row">
+        <label for="inputEmail3" class="col-2 col-form-label font-weight-bold">Correo</label>
+        <div class="col-10">
+          <input type="text" name="correo" #correo='ngModel' class="form-control" [(ngModel)]='coursesServices.newUser.correo'>
+        </div>
+      </div>
+      <div class="form-group col-12 row">
+          <label for="inputEmail3" class="col-2 col-form-label font-weight-bold">Vp</label>
           <div class="col-10">
-              <input type="text" name="puesto" #puesto='ngModel' class="form-control" [(ngModel)]='coursesServices.newUser.puesto'>
+            <input type="text" name="vp" #vp='ngModel' class="form-control" [(ngModel)]='coursesServices.newUser.vp'>
           </div>
         </div>
         <div class="form-group col-12 row">
-            <label for="inputEmail3" class="col-2 col-form-label font-weight-bold">Área</label>
+            <label for="inputEmail3" class="col-2 col-form-label font-weight-bold">División</label>
             <div class="col-10">
-                <input type="text" name="area" #area='ngModel' class="form-control" [(ngModel)]='coursesServices.newUser.area'>
-              </div>
+              <input type="text" name="division" #division='ngModel' class="form-control" [(ngModel)]='coursesServices.newUser.division'>
+            </div>
           </div>
           <div class="form-group col-12 row">
-              <label for="inputEmail3" class="col-2 col-form-label font-weight-bold">Correo</label>
+              <label for="inputEmail3" class="col-2 col-form-label font-weight-bold">Departamento</label>
               <div class="col-10">
-                  <input type="text" name="correo" #correo='ngModel' class="form-control" [(ngModel)]='coursesServices.newUser.correo'>
-                </div>
+                <input type="text" name="departamento" #departamento='ngModel' class="form-control" [(ngModel)]='coursesServices.newUser.departamento'>
+              </div>
             </div>
       <div class="col-12 row d-flex justify-content-around">
         <!-- inputs hidden -->
+        <input type='hidden' name='codigo' #codigo='ngModel' [(ngModel)]='coursesServices.newUser.codigo'>
         <input type='hidden' name='asistencia' #asistencia='ngModel' [(ngModel)]='coursesServices.newUser.asistencia'>
         <input type='hidden' name='mesCapacitacion' #mesCapacitacion='ngModel' [(ngModel)]='coursesServices.newUser.mesCapacitacion'>
         <input type='hidden' name='numHoras' #numHoras='ngModel' [(ngModel)]='coursesServices.newUser.numHoras'>
