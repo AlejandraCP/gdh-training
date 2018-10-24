@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 
 //services
-import { InscripcionesService } from '../../../services/inscripciones.service';
-import { UserService } from '../../../services/user.service';
-import { MisCursosService } from '../../../services/mis-cursos.service';
+import { InscripcionesService } from './../../services/inscripciones.service';
+import { UserService } from './../../services/user.service';
+import { MisCursosService } from './../../services/mis-cursos.service';
 
 @Component({
   selector: 'app-ver-registro',

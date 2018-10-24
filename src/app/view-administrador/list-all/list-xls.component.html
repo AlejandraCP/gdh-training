@@ -1,0 +1,69 @@
+<div *ngIf = "showRegistro">
+  <nav class="navbar navbar-expand-lg navbar-light border-bottom">
+    <div class="col-md-6 col-6 col-sm-6">
+        <img src="../../assets/images/logo-gris.png" alt="logo Inteligo">
+    </div>
+    <div class="col-md-6 col-6 col-sm-6 text-right">
+        <span>Intraining EnCurso</span>
+    </div>
+  </nav>
+  <a (click) = 'toggleRegistro()' class="back-page"><i class="fa fa-chevron-left" aria-hidden="true"></i>Volver</a>
+  <div class="content-mis-cursos pt-4 pl-1 pr-1">
+      <!-- <div *ngFor="let registerItem of inscripcionSubjectList">
+          <div *ngFor="let userItem of userList">
+              <div *ngIf="registerItem.usuario_Id == userItem.usuarioId" class="tg-fs8j"> {{userItem.apellidos}}, {{userItem.nombre}}</div>
+              <div *ngIf="registerItem.usuario_Id == userItem.usuarioId" class="tg-fs8j"> {{userItem.correo}}</div>
+              <div *ngIf="registerItem.usuario_Id == userItem.usuarioId" class="tg-fs8j"> {{registerItem.curso_id}}</div>
+          </div>
+      </div> -->
+        <table id="tbl-ver-registro" class="tbl-ver-registro tg border-left border-bottom">
+          <tr>
+            <th class="tg-fs8j text-center"> Correos</th>
+            <th class="tg-fs8j text-center"> VP (Actual)</th>
+            <th class="tg-fs8j text-center"> División</th>
+            <th class="tg-fs8j text-center"> Departamento (Actual)</th>
+            <th class="tg-fs8j text-center"> Puesto</th>
+            <th class="tg-fs8j text-center"> Apellidos y Nombres</th>
+            <th class="tg-fs8j text-center"> DNI</th>
+            <th class="tg-fs8j text-center"> CODIGO</th>
+            <th class="tg-fs8j text-center"> Mes</th>
+            <th class="tg-fs8j text-center"> Capacitación</th>
+            <th class="tg-fs8j text-center"> Num de horas</th>
+            <th class="tg-fs8j text-center"> Asistencia</th>
+          </tr>
+         
+          <tr>
+            <td class="tg-fs8j"> ichavarry@inteligogroup.com</td>
+            <td class="tg-fs8j"> Finanzas</td>
+            <td class="tg-fs8j">Logística</td>
+            <td class="tg-fs8j">G. Operaciones</td>
+            <td class="tg-fs8j">Chavarry, Isabel</td>
+            <td class="tg-fs8j">Analista Jr.  de Logística</td>
+            <td class="tg-fs8j">24242424</td>
+            <td class="tg-fs8j">0800320</td>
+            <td class="tg-fs8j">Noviembre</td>
+            <td class="tg-fs8j">Salud en el trabajo</td>
+            <td class="tg-fs8j">04</td>
+            <td class="tg-fs8j">OK</td>
+          </tr>
+          <tr>
+            <td class="tg-fs8j"> fcolmenares@inteligogroup.com</td>
+            <td class="tg-fs8j"> Finanzas</td>
+            <td class="tg-fs8j">Logística</td>
+            <td class="tg-fs8j">G. Operaciones</td>
+            <td class="tg-fs8j">Colmenares, Francesca</td>
+            <td class="tg-fs8j">Analista Jr.  de Logística</td>
+            <td class="tg-fs8j">22222222</td>
+            <td class="tg-fs8j">0800321</td>
+            <td class="tg-fs8j">Noviembre</td>
+            <td class="tg-fs8j">Salud en el trabajo</td>
+            <td class="tg-fs8j">04</td>
+            <td class="tg-fs8j">OK</td>
+          </tr>
+
+        </table>
+  </div>
+</div>
+<div *ngIf = "!showRegistro">
+  <app-mis-cursos></app-mis-cursos>
+</div>

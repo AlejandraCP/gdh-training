@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-xls.component.css']
 })
 export class ListXlsComponent implements OnInit {
-
+  public showRegistro: boolean;
+  
   constructor() { }
 
-  ngOnInit() {
-  }
+  
+    ngOnInit() {
+      this.showRegistro = true;
+    }
+  
+    toggleRegistro() {
+      this.showRegistro = !this.showRegistro;
+    }
 
 }

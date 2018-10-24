@@ -26,7 +26,6 @@ import { ViewAdministradorComponent } from './view-administrador/view-administra
 import { CrearCursoComponent } from './view-administrador/crear-curso/crear-curso.component';
 import { MisCursosComponent } from './view-administrador/mis-cursos/mis-cursos.component';
 import { ViewAttendanceComponent } from './view-attendance/view-attendance.component';
-import { VerRegistroComponent } from './view-administrador/mis-cursos/ver-registro/ver-registro.component';
 
 //services
 import { HttpService } from './shared/http.service';
@@ -40,9 +39,6 @@ import { BoolSelectExpoService } from './services/bool-select-expo.service';
 import { CreateTeacherService } from './services/create-teacher.service';
 import { CountersService } from './services/counters.service';
 import { CoursesService } from './services/courses.service';
-
-
-
 
 import { MisCursosService } from './services/mis-cursos.service';
 import { InscripcionesService } from './services/inscripciones.service';
@@ -61,9 +57,10 @@ import { environment } from '../environments/environment';
 import { AuthGuard } from './guards/auth.guard';
 import { SidebarDirective } from './directives/sidebar.directive';
 import { UploadXlsComponent } from './view-administrador/upload-xls/upload-xls.component';
-import { ListXlsComponent } from './view-administrador/list-xls/list-xls.component';
+import { ListXlsComponent } from './view-administrador/list-all/list-xls.component';
 import { VerRegistroComponent } from './view-administrador/ver-registro/ver-registro.component';
 import { CoursesCoorComponent } from './courses-coor/courses-coor.component';
+import { ListSessionComponent } from './view-administrador/list-session/list-session.component';
 
 
 const routes: Routes = [
@@ -94,7 +91,12 @@ const routes: Routes = [
     SidebarDirective,
     ViewUserHomeComponent,
     VerRegistroComponent,
-    CoursesCoorComponent
+    CoursesCoorComponent,
+    ViewAttendanceComponent,
+    UploadXlsComponent,
+    ListXlsComponent,
+    ListSessionComponent,
+    ListSessionComponent
   ],
   imports: [
     AngularFireAuthModule,
