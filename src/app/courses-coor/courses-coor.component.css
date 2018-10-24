@@ -23,3 +23,13 @@ a {
   text-decoration: none;
   background-color: transparent;
 }
+
+.btn-assist {
+  background-color: #b8ce9f;
+  font-weight: 600;
+}
+
+.navbar img{
+  height: 35px !important;
+  margin-left: -15px;
+}

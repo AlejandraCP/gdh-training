@@ -85,4 +85,20 @@ export class CoursesService {
     })
   }
 
+  updateAsistenciaS1($key: string, flag: boolean) {
+    this.cursosListS1.update($key, { asistencia: flag })
+  }
+
+  updateAsistenciaS2($key: string, flag: boolean) {
+    this.cursosListS2.update($key, { asistencia: flag })
+  }
+
+  updateAsistenciaS3($key: string, flag: boolean) {
+    this.cursosListS3.update($key, { asistencia: flag })
+  }
+
+  updateAsistenciaS4($key: string, flag: boolean) {
+    this.cursosListS4.update($key, { asistencia: flag })
+  }
+
 }
