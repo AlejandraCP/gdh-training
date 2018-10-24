@@ -1,4 +1,4 @@
-export class CursoGDH {
+export class UserGDH {
   public $key: string;
   public dni: number;
   public nombre: string;
@@ -9,4 +9,5 @@ export class CursoGDH {
   public mesCapacitacion: string;
   public numHoras: number;
   public nombreCurso: string;
+  public sesion: string;
 }
