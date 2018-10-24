@@ -1,0 +1,71 @@
+<div *ngIf="show" class="main-container">
+  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <div class="col-3 text-left coordinadora">
+      <img src="../../assets/images/logo-gris.png" alt="logo Inteligo">
+    </div>
+    <div class="col-6 text-center title">
+      <span>Inteligo Intraining</span>
+      <span>| Dev</span>
+    </div>
+    <div class="col-3 text-right log-out">
+      <a href="/login" (click)="logoutUser()"><i class="fa fa-sign-out" aria-hidden="true"></i>Salir</a>
+    </div>
+  </nav>
+
+
+  <div class="container">
+    <form action="" #userForm='ngForm' class='border-dark row' (ngSubmit)='onSubmit(userForm)'>
+      <input type='hidden' name='$key' #$key='ngModel' [(ngModel)]='coursesServices.newUser.$key'>
+      <div class="col-12 d-flex justify-content-around">
+        <p class="mt-2 mr-2  font-weight-bold">Número de sesión </p>
+        <select name='sesion' #sesion='ngModel' [(ngModel)]="coursesServices.newUser.sesion" (ngModelChange)="selectSesion($event)"
+          class="custom-select">
+          <option *ngFor="let sesion of optionSesions" [ngValue]="sesion.sesion" [selected]='optionSesions[0].sesion' class="select-year py-4">{{sesion.sesion}}</option>
+        </select>
+      </div>
+      <div class="col-12 ">
+        <div class="form-group">
+          <p class="d-inline">Nombre</p>
+          <input type="text" name="nombre" #nombre='ngModel' [(ngModel)]='coursesServices.newUser.nombre'>
+        </div>
+        <div class="form-group">
+          <p class="d-inline">DNI</p>
+          <input type="text" name="dni" #dni='ngModel' [(ngModel)]='coursesServices.newUser.dni'>
+        </div>
+        <div class="form-group">
+            <p class="d-inline">Puesto</p>
+            <input type="text" name="puesto" #puesto='ngModel' [(ngModel)]='coursesServices.newUser.puesto'>
+        </div>
+        <div class="form-group">
+            <p class="d-inline">Área</p>
+            <input type="text" name="area" #area='ngModel' [(ngModel)]='coursesServices.newUser.area'>
+        </div>
+        <div class="form-group">
+            <p class="d-inline">correo</p>
+            <input type="text" name="correo" #correo='ngModel' [(ngModel)]='coursesServices.newUser.correo'>
+        </div>
+
+        <!-- inputs hidden -->
+        <input type='hidden' name='asistencia' #asistencia='ngModel' [(ngModel)]='coursesServices.newUser.asistencia'>
+        <input type='hidden' name='mesCapacitacion' #mesCapacitacion='ngModel' [(ngModel)]='coursesServices.newUser.mesCapacitacion'>
+        <input type='hidden' name='numHoras' #numHoras='ngModel' [(ngModel)]='coursesServices.newUser.numHoras'>
+        <input type='hidden' name='nombreCurso' #nombreCurso='ngModel' [(ngModel)]='coursesServices.newUser.nombreCurso'>
+      </div>
+      <div>
+        <button type="submit">Crear Usuario</button>
+      </div>
+
+    </form>
+  </div>
+
+
+</div>
+<div class="d-flex justify-content-center" *ngIf="!show">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Esta dirección no esta disponible</h1>
+      <a class="nav-link sign-out" href="javascript:window.history.back();"><i class="fa fa-angle-double-left"
+          aria-hidden="true"></i> Volver</a>
+    </div>
+  </div>
+</div>

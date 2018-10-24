@@ -15,7 +15,7 @@ export class ListXlsComponent implements OnInit {
     ngOnInit() {
       this.showRegistro = true;
       this.sessionList = [];
-      this.coursesService.getSession1()
+      this.coursesService.getGroup('sesion1')
       .snapshotChanges()
       .subscribe( item => {
         item.forEach(element => {
@@ -25,7 +25,7 @@ export class ListXlsComponent implements OnInit {
         });
       })
 
-      this.coursesService.getSession2()
+      this.coursesService.getGroup('sesion2')
       .snapshotChanges()
       .subscribe( item => {
         item.forEach(element => {
@@ -35,7 +35,7 @@ export class ListXlsComponent implements OnInit {
         });
       })
 
-      this.coursesService.getSession3()
+      this.coursesService.getGroup('sesion3')
       .snapshotChanges()
       .subscribe( item => {
         item.forEach(element => {
@@ -45,7 +45,7 @@ export class ListXlsComponent implements OnInit {
         });
       })
 
-      this.coursesService.getSession4()
+      this.coursesService.getGroup('sesion4')
       .snapshotChanges()
       .subscribe( item => {
         item.forEach(element => {

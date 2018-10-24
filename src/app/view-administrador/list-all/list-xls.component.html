@@ -7,7 +7,6 @@
         <span>Intraining EnCurso</span>
     </div>
   </nav>
-  <a (click) = 'toggleRegistro()' class="back-page"><i class="fa fa-chevron-left" aria-hidden="true"></i>Volver</a>
   <div class="content-mis-cursos pt-4 pl-1 pr-1">
       <!-- <div *ngFor="let registerItem of inscripcionSubjectList">
           <div *ngFor="let userItem of userList">
@@ -18,21 +17,35 @@
       </div> -->
         <table id="tbl-ver-registro" class="tbl-ver-registro tg border-left border-bottom">
           <tr>
-            <th class="tg-fs8j text-center"> Correos</th>
-            <th class="tg-fs8j text-center"> VP (Actual)</th>
-            <th class="tg-fs8j text-center"> División</th>
-            <th class="tg-fs8j text-center"> Departamento (Actual)</th>
-            <th class="tg-fs8j text-center"> Puesto</th>
-            <th class="tg-fs8j text-center"> Apellidos y Nombres</th>
-            <th class="tg-fs8j text-center"> DNI</th>
-            <th class="tg-fs8j text-center"> CODIGO</th>
-            <th class="tg-fs8j text-center"> Mes</th>
-            <th class="tg-fs8j text-center"> Capacitación</th>
-            <th class="tg-fs8j text-center"> Num de horas</th>
-            <th class="tg-fs8j text-center"> Asistencia</th>
+            <th class="tg-fs8j text-center font-weight-bold"> Correos</th>
+            <th class="tg-fs8j text-center font-weight-bold"> VP (Actual)</th>
+            <th class="tg-fs8j text-center font-weight-bold"> División</th>
+            <th class="tg-fs8j text-center font-weight-bold"> Departamento (Actual)</th>
+            <th class="tg-fs8j text-center font-weight-bold"> Puesto</th>
+            <th class="tg-fs8j text-center font-weight-bold"> Apellidos y Nombres</th>
+            <th class="tg-fs8j text-center font-weight-bold"> DNI</th>
+            <th class="tg-fs8j text-center font-weight-bold"> CODIGO</th>
+            <th class="tg-fs8j text-center font-weight-bold"> Mes</th>
+            <th class="tg-fs8j text-center font-weight-bold"> Capacitación</th>
+            <th class="tg-fs8j text-center font-weight-bold"> Num de horas</th>
+            <th class="tg-fs8j text-center font-weight-bold"> Asistencia</th>
           </tr>
-         
-          <tr>
+          <tr *ngFor="let itemRegisterSession of sessionList">
+            <td class="tg-fs8j"> {{itemRegisterSession.correo}} </td>
+            <td class="tg-fs8j"> {{itemRegisterSession.vicepresidencia}} </td>
+            <td class="tg-fs8j"> {{itemRegisterSession.area}}</td>
+            <td class="tg-fs8j"> {{itemRegisterSession.departamento}}</td>
+            <td class="tg-fs8j"> {{itemRegisterSession.puesto}}</td>
+            <td class="tg-fs8j"> {{itemRegisterSession.nombre}}</td>
+            <td class="tg-fs8j"> {{itemRegisterSession.dni}}</td>
+            <td class="tg-fs8j"> {{itemRegisterSession.codigo}}</td>
+            <td class="tg-fs8j"> {{itemRegisterSession.mesCapacitacion}}</td>
+            <td class="tg-fs8j"> {{itemRegisterSession.nombreCurso}}</td>
+            <td class="tg-fs8j"> {{itemRegisterSession.Horas}}</td>
+            <td *ngIf="itemRegisterSession.asistencia == true" class="tg-fs8j"> OK</td>
+            <td *ngIf="itemRegisterSession.asistencia == false" class="tg-fs8j"> No asistió</td>
+          </tr>
+          <!-- <tr>
             <td class="tg-fs8j"> ichavarry@inteligogroup.com</td>
             <td class="tg-fs8j"> Finanzas</td>
             <td class="tg-fs8j">Logística</td>
@@ -59,7 +72,7 @@
             <td class="tg-fs8j">Salud en el trabajo</td>
             <td class="tg-fs8j">04</td>
             <td class="tg-fs8j">OK</td>
-          </tr>
+          </tr> -->
 
         </table>
   </div>

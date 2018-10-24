@@ -37,33 +37,20 @@
         <th class="tg-fs8j text-center"> Asistencia</th>
       </tr>
      
-      <tr>
-        <td class="tg-fs8j"> ichavarry@inteligogroup.com</td>
-        <td class="tg-fs8j"> Finanzas</td>
-        <td class="tg-fs8j">Logística</td>
-        <td class="tg-fs8j">G. Operaciones</td>
-        <td class="tg-fs8j">Chavarry, Isabel</td>
-        <td class="tg-fs8j">Analista Jr.  de Logística</td>
-        <td class="tg-fs8j">24242424</td>
-        <td class="tg-fs8j">0800320</td>
-        <td class="tg-fs8j">Noviembre</td>
-        <td class="tg-fs8j">Salud en el trabajo</td>
-        <td class="tg-fs8j">04</td>
-        <td class="tg-fs8j">OK</td>
-      </tr>
-      <tr>
-        <td class="tg-fs8j"> fcolmenares@inteligogroup.com</td>
-        <td class="tg-fs8j"> Finanzas</td>
-        <td class="tg-fs8j">Logística</td>
-        <td class="tg-fs8j">G. Operaciones</td>
-        <td class="tg-fs8j">Colmenares, Francesca</td>
-        <td class="tg-fs8j">Analista Jr.  de Logística</td>
-        <td class="tg-fs8j">22222222</td>
-        <td class="tg-fs8j">0800321</td>
-        <td class="tg-fs8j">Noviembre</td>
-        <td class="tg-fs8j">Salud en el trabajo</td>
-        <td class="tg-fs8j">04</td>
-        <td class="tg-fs8j">OK</td>
+      <tr *ngFor="let itemRegisterSession of session1List">
+        <td class="tg-fs8j"> {{itemRegisterSession.correo}} </td>
+        <td class="tg-fs8j"> {{itemRegisterSession.vicepresidencia}} </td>
+        <th class="tg-fs8j"> {{itemRegisterSession.area}}</th>
+        <th class="tg-fs8j"> {{itemRegisterSession.departamento}}</th>
+        <th class="tg-fs8j"> {{itemRegisterSession.puesto}}</th>
+        <th class="tg-fs8j"> {{itemRegisterSession.nombre}}</th>
+        <th class="tg-fs8j"> {{itemRegisterSession.dni}}</th>
+        <th class="tg-fs8j"> {{itemRegisterSession.codigo}}</th>
+        <th class="tg-fs8j"> {{itemRegisterSession.mesCapacitacion}}</th>
+        <th class="tg-fs8j"> {{itemRegisterSession.nombreCurso}}</th>
+        <th class="tg-fs8j"> {{itemRegisterSession.Horas}}</th>
+        <th *ngIf="itemRegisterSession.asistencia == true" class="tg-fs8j"> OK</th>
+        <th *ngIf="itemRegisterSession.asistencia == false" class="tg-fs8j"> No asistió</th>
       </tr>
 
     </table>
@@ -85,33 +72,20 @@
         <th class="tg-fs8j text-center"> Asistencia</th>
       </tr>
      
-      <tr>
-        <td class="tg-fs8j"> ichavarry@inteligogroup.com</td>
-        <td class="tg-fs8j"> Finanzas</td>
-        <td class="tg-fs8j">Logística</td>
-        <td class="tg-fs8j">G. Operaciones</td>
-        <td class="tg-fs8j">Chavarry, Isabel</td>
-        <td class="tg-fs8j">Analista Jr.  de Logística</td>
-        <td class="tg-fs8j">24242424</td>
-        <td class="tg-fs8j">0800320</td>
-        <td class="tg-fs8j">Noviembre</td>
-        <td class="tg-fs8j">Salud en el trabajo</td>
-        <td class="tg-fs8j">04</td>
-        <td class="tg-fs8j">OK</td>
-      </tr>
-      <tr>
-        <td class="tg-fs8j"> fcolmenares@inteligogroup.com</td>
-        <td class="tg-fs8j"> Finanzas</td>
-        <td class="tg-fs8j">Logística</td>
-        <td class="tg-fs8j">G. Operaciones</td>
-        <td class="tg-fs8j">Colmenares, Francesca</td>
-        <td class="tg-fs8j">Analista Jr.  de Logística</td>
-        <td class="tg-fs8j">22222222</td>
-        <td class="tg-fs8j">0800321</td>
-        <td class="tg-fs8j">Noviembre</td>
-        <td class="tg-fs8j">Salud en el trabajo</td>
-        <td class="tg-fs8j">04</td>
-        <td class="tg-fs8j">OK</td>
+      <tr *ngFor="let itemRegisterSession of session2List">
+        <td class="tg-fs8j"> {{itemRegisterSession.correo}} </td>
+        <td class="tg-fs8j"> {{itemRegisterSession.vicepresidencia}} </td>
+        <td class="tg-fs8j"> {{itemRegisterSession.area}}</td>
+        <td class="tg-fs8j"> {{itemRegisterSession.departamento}}</td>
+        <td class="tg-fs8j"> {{itemRegisterSession.puesto}}</td>
+        <td class="tg-fs8j"> {{itemRegisterSession.nombre}}</td>
+        <td class="tg-fs8j"> {{itemRegisterSession.dni}}</td>
+        <td class="tg-fs8j"> {{itemRegisterSession.codigo}}</td>
+        <td class="tg-fs8j"> {{itemRegisterSession.mesCapacitacion}}</td>
+        <td class="tg-fs8j"> {{itemRegisterSession.nombreCurso}}</td>
+        <td class="tg-fs8j"> {{itemRegisterSession.Horas}}</td>
+        <td *ngIf="itemRegisterSession.asistencia == true" class="tg-fs8j"> OK</td>
+        <td *ngIf="itemRegisterSession.asistencia == false" class="tg-fs8j"> No asistió</td>
       </tr>
 
     </table>
@@ -133,33 +107,20 @@
         <th class="tg-fs8j text-center"> Asistencia</th>
       </tr>
      
-      <tr>
-        <td class="tg-fs8j"> ichavarry@inteligogroup.com</td>
-        <td class="tg-fs8j"> Finanzas</td>
-        <td class="tg-fs8j">Logística</td>
-        <td class="tg-fs8j">G. Operaciones</td>
-        <td class="tg-fs8j">Chavarry, Isabel</td>
-        <td class="tg-fs8j">Analista Jr.  de Logística</td>
-        <td class="tg-fs8j">24242424</td>
-        <td class="tg-fs8j">0800320</td>
-        <td class="tg-fs8j">Noviembre</td>
-        <td class="tg-fs8j">Salud en el trabajo</td>
-        <td class="tg-fs8j">04</td>
-        <td class="tg-fs8j">OK</td>
-      </tr>
-      <tr>
-        <td class="tg-fs8j"> fcolmenares@inteligogroup.com</td>
-        <td class="tg-fs8j"> Finanzas</td>
-        <td class="tg-fs8j">Logística</td>
-        <td class="tg-fs8j">G. Operaciones</td>
-        <td class="tg-fs8j">Colmenares, Francesca</td>
-        <td class="tg-fs8j">Analista Jr.  de Logística</td>
-        <td class="tg-fs8j">22222222</td>
-        <td class="tg-fs8j">0800321</td>
-        <td class="tg-fs8j">Noviembre</td>
-        <td class="tg-fs8j">Salud en el trabajo</td>
-        <td class="tg-fs8j">04</td>
-        <td class="tg-fs8j">OK</td>
+      <tr *ngFor="let itemRegisterSession of session3List">
+        <td class="tg-fs8j"> {{itemRegisterSession.correo}} </td>
+        <td class="tg-fs8j"> {{itemRegisterSession.vicepresidencia}} </td>
+        <td class="tg-fs8j"> {{itemRegisterSession.area}}</td>
+        <td class="tg-fs8j"> {{itemRegisterSession.departamento}}</td>
+        <td class="tg-fs8j"> {{itemRegisterSession.puesto}}</td>
+        <td class="tg-fs8j"> {{itemRegisterSession.nombre}}</td>
+        <td class="tg-fs8j"> {{itemRegisterSession.dni}}</td>
+        <td class="tg-fs8j"> {{itemRegisterSession.codigo}}</td>
+        <td class="tg-fs8j"> {{itemRegisterSession.mesCapacitacion}}</td>
+        <td class="tg-fs8j"> {{itemRegisterSession.nombreCurso}}</td>
+        <td class="tg-fs8j"> {{itemRegisterSession.Horas}}</td>
+        <td *ngIf="itemRegisterSession.asistencia == true" class="tg-fs8j"> OK</td>
+        <td *ngIf="itemRegisterSession.asistencia == false" class="tg-fs8j"> No asistió</td>
       </tr>
 
     </table>
@@ -167,47 +128,34 @@
   <div class="tab-pane fade" id="pills-session4" role="tabpanel" aria-labelledby="pills-session4-tab">
     <table id="tbl-ver-sesion4" class="tbl-ver-registro tg border-left border-bottom">
       <tr>
-        <th class="tg-fs8j text-center"> Correos</th>
-        <th class="tg-fs8j text-center"> VP (Actual)</th>
-        <th class="tg-fs8j text-center"> División</th>
-        <th class="tg-fs8j text-center"> Departamento (Actual)</th>
-        <th class="tg-fs8j text-center"> Puesto</th>
-        <th class="tg-fs8j text-center"> Apellidos y Nombres</th>
-        <th class="tg-fs8j text-center"> DNI</th>
-        <th class="tg-fs8j text-center"> CODIGO</th>
-        <th class="tg-fs8j text-center"> Mes</th>
-        <th class="tg-fs8j text-center"> Capacitación</th>
-        <th class="tg-fs8j text-center"> Num de horas</th>
-        <th class="tg-fs8j text-center"> Asistencia</th>
+        <th class="tg-fs8j text-center font-weight-bold"> Correos</th>
+        <th class="tg-fs8j text-center font-weight-bold"> VP (Actual)</th>
+        <th class="tg-fs8j text-center font-weight-bold"> División</th>
+        <th class="tg-fs8j text-center font-weight-bold"> Departamento (Actual)</th>
+        <th class="tg-fs8j text-center font-weight-bold"> Puesto</th>
+        <th class="tg-fs8j text-center font-weight-bold"> Apellidos y Nombres</th>
+        <th class="tg-fs8j text-center font-weight-bold"> DNI</th>
+        <th class="tg-fs8j text-center font-weight-bold"> CODIGO</th>
+        <th class="tg-fs8j text-center font-weight-bold"> Mes</th>
+        <th class="tg-fs8j text-center font-weight-bold"> Capacitación</th>
+        <th class="tg-fs8j text-center font-weight-bold"> Num de horas</th>
+        <th class="tg-fs8j text-center font-weight-bold"> Asistencia</th>
       </tr>
      
-      <tr>
-        <td class="tg-fs8j"> ichavarry@inteligogroup.com</td>
-        <td class="tg-fs8j"> Finanzas</td>
-        <td class="tg-fs8j">Logística</td>
-        <td class="tg-fs8j">G. Operaciones</td>
-        <td class="tg-fs8j">Chavarry, Isabel</td>
-        <td class="tg-fs8j">Analista Jr.  de Logística</td>
-        <td class="tg-fs8j">24242424</td>
-        <td class="tg-fs8j">0800320</td>
-        <td class="tg-fs8j">Noviembre</td>
-        <td class="tg-fs8j">Salud en el trabajo</td>
-        <td class="tg-fs8j">04</td>
-        <td class="tg-fs8j">OK</td>
-      </tr>
-      <tr>
-        <td class="tg-fs8j"> fcolmenares@inteligogroup.com</td>
-        <td class="tg-fs8j"> Finanzas</td>
-        <td class="tg-fs8j">Logística</td>
-        <td class="tg-fs8j">G. Operaciones</td>
-        <td class="tg-fs8j">Colmenares, Francesca</td>
-        <td class="tg-fs8j">Analista Jr.  de Logística</td>
-        <td class="tg-fs8j">22222222</td>
-        <td class="tg-fs8j">0800321</td>
-        <td class="tg-fs8j">Noviembre</td>
-        <td class="tg-fs8j">Salud en el trabajo</td>
-        <td class="tg-fs8j">04</td>
-        <td class="tg-fs8j">OK</td>
+      <tr *ngFor="let itemRegisterSession of session4List">
+        <td class="tg-fs8j"> {{itemRegisterSession.correo}} </td>
+        <td class="tg-fs8j"> {{itemRegisterSession.vicepresidencia}} </td>
+        <td class="tg-fs8j"> {{itemRegisterSession.area}}</td>
+        <td class="tg-fs8j"> {{itemRegisterSession.departamento}}</td>
+        <td class="tg-fs8j"> {{itemRegisterSession.puesto}}</td>
+        <td class="tg-fs8j"> {{itemRegisterSession.nombre}}</td>
+        <td class="tg-fs8j"> {{itemRegisterSession.dni}}</td>
+        <td class="tg-fs8j"> {{itemRegisterSession.codigo}}</td>
+        <td class="tg-fs8j"> {{itemRegisterSession.mesCapacitacion}}</td>
+        <td class="tg-fs8j"> {{itemRegisterSession.nombreCurso}}</td>
+        <td class="tg-fs8j"> {{itemRegisterSession.Horas}}</td>
+        <td *ngIf="itemRegisterSession.asistencia == true" class="tg-fs8j"> OK</td>
+        <td *ngIf="itemRegisterSession.asistencia == false" class="tg-fs8j"> No asistió</td>
       </tr>
 
     </table>

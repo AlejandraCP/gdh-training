@@ -3,39 +3,105 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { AngularFireDatabase, AngularFireList } from "angularfire2/database";
 import * as firebase from 'firebase';
 import { Observable } from 'rxjs';
+import { UserGDH } from '../models/cursosGDH';
+
 @Injectable()
 export class CoursesService {
   cursosColletion: AngularFirestoreCollection<any>;
   cursos: Observable<{}[]>;
   cursosDoc: AngularFirestoreDocument<any>;
-  session1List: AngularFireList<any>;
-  session2List: AngularFireList<any>;
-  session3List: AngularFireList<any>;
-  session4List: AngularFireList<any>;
+  cursosList: AngularFireList<any>;
+  cursosListGroup: AngularFireList<any>;
+  cursosListS1: AngularFireList<any> = this.firebase.list('cursos/sesion1');
+  cursosListS2: AngularFireList<any> = this.firebase.list('cursos/sesion2');
+  cursosListS3: AngularFireList<any> = this.firebase.list('cursos/sesion3');
+  cursosListS4: AngularFireList<any> = this.firebase.list('cursos/sesion4');
+  newUser: UserGDH = new UserGDH();
 
-  constructor( public angularFirestore: AngularFirestore, public firebase: AngularFireDatabase) {
-    this.cursos = angularFirestore.collection('cursos').valueChanges();
-   }
+  constructor( private firebase: AngularFireDatabase) { }
 
-   getCursos() {
-     return this.cursos;
-   }
+  // this.cursosListS1 = this.firebase.list('cursos/sesion1');
 
-   getSession1(){
-    this.session1List = this.firebase.list('cursos/sesion1');
-    return this.session1List;
-   }
-   getSession2(){
-    this.session2List = this.firebase.list('cursos/sesion2');
-    return this.session2List;
-   }
-   getSession3(){
-    this.session3List = this.firebase.list('cursos/sesion3');
-    return this.session3List;
-   }
-   getSession4(){
-    this.session4List = this.firebase.list('cursos/sesion4');
-    return this.session4List;
-   }
+  getCursos() {
+    this.cursosList = this.firebase.list('cursos');
+    return this.cursosList;
+  }
+
+  getGroup(group) {
+  this.cursosListGroup = this.firebase.list(`cursos/${group}`);
+    return this.cursosListGroup;
+  }
+
+  InsertUserS1(newUser: UserGDH) {
+    this.cursosListS1.push({
+      dni: newUser.dni,
+      nombre: newUser.nombre,
+      area: newUser.area,
+      puesto: newUser.puesto,
+      asistencia: newUser.asistencia,
+      correo: newUser.correo,
+      mesCapacitacion: newUser.mesCapacitacion,
+      numHoras: newUser.numHoras,
+      nombreCurso: newUser.nombreCurso
+    })
+  }
+
+  InsertUserS2(newUser: UserGDH) {
+    this.cursosListS2.push({
+      dni: newUser.dni,
+      nombre: newUser.nombre,
+      area: newUser.area,
+      puesto: newUser.puesto,
+      asistencia: newUser.asistencia,
+      correo: newUser.correo,
+      mesCapacitacion: newUser.mesCapacitacion,
+      numHoras: newUser.numHoras,
+      nombreCurso: newUser.nombreCurso
+    })
+  }
+
+  InsertUserS3(newUser: UserGDH) {
+    this.cursosListS3.push({
+      dni: newUser.dni,
+      nombre: newUser.nombre,
+      area: newUser.area,
+      puesto: newUser.puesto,
+      asistencia: newUser.asistencia,
+      correo: newUser.correo,
+      mesCapacitacion: newUser.mesCapacitacion,
+      numHoras: newUser.numHoras,
+      nombreCurso: newUser.nombreCurso
+    })
+  }
+
+  InsertUserS4(newUser: UserGDH) {
+    this.cursosListS4.push({
+      dni: newUser.dni,
+      nombre: newUser.nombre,
+      area: newUser.area,
+      puesto: newUser.puesto,
+      asistencia: newUser.asistencia,
+      correo: newUser.correo,
+      mesCapacitacion: newUser.mesCapacitacion,
+      numHoras: newUser.numHoras,
+      nombreCurso: newUser.nombreCurso
+    })
+  }
+
+  updateAsistenciaS1($key: string, flag: boolean) {
+    this.cursosListS1.update($key, { asistencia: flag })
+  }
+
+  updateAsistenciaS2($key: string, flag: boolean) {
+    this.cursosListS2.update($key, { asistencia: flag })
+  }
+
+  updateAsistenciaS3($key: string, flag: boolean) {
+    this.cursosListS3.update($key, { asistencia: flag })
+  }
+
+  updateAsistenciaS4($key: string, flag: boolean) {
+    this.cursosListS4.update($key, { asistencia: flag })
+  }
 
 }

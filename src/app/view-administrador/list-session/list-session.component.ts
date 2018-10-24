@@ -15,7 +15,7 @@ export class ListSessionComponent implements OnInit {
 
   ngOnInit() {
 
-    this.coursesService.getSession1()
+    this.coursesService.getGroup('sesion1')
     .snapshotChanges()
     .subscribe( item => {
       this.session1List = [];
@@ -24,10 +24,9 @@ export class ListSessionComponent implements OnInit {
         y['$key'] = element.key;
         this.session1List.push(y);
       });
-      console.log(this.session1List);
     })
 
-    this.coursesService.getSession2()
+    this.coursesService.getGroup('sesion2')
     .snapshotChanges()
     .subscribe( item => {
       this.session2List = [];
@@ -36,10 +35,9 @@ export class ListSessionComponent implements OnInit {
         y['$key'] = element.key;
         this.session2List.push(y);
       });
-      console.log(this.session2List);
     })
 
-    this.coursesService.getSession3()
+    this.coursesService.getGroup('sesion3')
     .snapshotChanges()
     .subscribe( item => {
       this.session3List = [];
@@ -48,10 +46,9 @@ export class ListSessionComponent implements OnInit {
         y['$key'] = element.key;
         this.session3List.push(y);
       });
-      console.log(this.session3List);
     })
 
-    this.coursesService.getSession4()
+    this.coursesService.getGroup('sesion4')
     .snapshotChanges()
     .subscribe( item => {
       this.session4List = [];
@@ -60,7 +57,6 @@ export class ListSessionComponent implements OnInit {
         y['$key'] = element.key;
         this.session4List.push(y);
       });
-      console.log(this.session4List);
     })
   }
   }

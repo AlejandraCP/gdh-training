@@ -9,7 +9,7 @@
 .tg td{
     font-size:14px;
     padding:10px 5px;
-    border-right: 1px solid #dee2e6;
+    border: 1px solid #dee2e6;
     overflow:hidden;
     word-break:normal;
     color: #898989;
@@ -17,7 +17,6 @@
 }
 .tg th{
     font-size:14px;
-    font-weight:600;
     padding:10px 5px;
     border: 1px solid #dee2e6;
     overflow:hidden;
@@ -27,7 +26,8 @@
 }
 .tg .tg-ycr8{
     background-color:#ffffff;
-    text-align:left;vertical-align:top
+    text-align:left;
+    vertical-align:top
 }
 .tg .tg-fs8j{
     background-color:#ffffff;
@@ -50,7 +50,6 @@
 }
 .tbl-ver-registro tr:nth-child(2) td{
     width: 130px;
-    border: 1px solid #cccccc;
 }
 .back-page{
     cursor: pointer;

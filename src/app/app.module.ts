@@ -25,9 +25,7 @@ import { LoginAdminComponent } from './login-admin/login-admin.component';
 import { ViewAdministradorComponent } from './view-administrador/view-administrador.component';
 import { CrearCursoComponent } from './view-administrador/crear-curso/crear-curso.component';
 import { MisCursosComponent } from './view-administrador/mis-cursos/mis-cursos.component';
-import { ViewAttendanceComponent } from './view-attendance/view-attendance.component';
 
-//services
 import { HttpService } from './shared/http.service';
 import { AuthService } from './auth/auth.service';
 import { HomeService } from './home/home.service';
@@ -70,7 +68,6 @@ const routes: Routes = [
   { path: 'login', component: LoginFbComponent },
   { path: 'administrador', component: ViewAdministradorComponent, canActivate: [AuthGuard] },
   { path: 'registros/:id/:pag', component: VerRegistroComponent, canActivate: [AuthGuard] },
-  { path: 'attendance', component: ViewAttendanceComponent },
   { path: '**', component: NotFoundPageComponent},
   { path: 'coor', component: CoursesCoorComponent, canActivate: [AuthGuard]}
 ];
@@ -92,7 +89,6 @@ const routes: Routes = [
     ViewUserHomeComponent,
     VerRegistroComponent,
     CoursesCoorComponent,
-    ViewAttendanceComponent,
     UploadXlsComponent,
     ListXlsComponent,
     ListSessionComponent,
