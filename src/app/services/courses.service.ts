@@ -29,7 +29,6 @@ export class CoursesService {
     this.cursosListS1.push({
       dni: newUser.dni,
       nombre: newUser.nombre,
-      area: newUser.area,
       puesto: newUser.puesto,
       asistencia: newUser.asistencia,
       correo: newUser.correo,
@@ -47,7 +46,6 @@ export class CoursesService {
     this.cursosListS2.push({
       dni: newUser.dni,
       nombre: newUser.nombre,
-      area: newUser.area,
       puesto: newUser.puesto,
       asistencia: newUser.asistencia,
       correo: newUser.correo,
@@ -65,7 +63,6 @@ export class CoursesService {
     this.cursosListS3.push({
       dni: newUser.dni,
       nombre: newUser.nombre,
-      area: newUser.area,
       puesto: newUser.puesto,
       asistencia: newUser.asistencia,
       correo: newUser.correo,
@@ -83,7 +80,6 @@ export class CoursesService {
     this.cursosListS4.push({
       dni: newUser.dni,
       nombre: newUser.nombre,
-      area: newUser.area,
       puesto: newUser.puesto,
       asistencia: newUser.asistencia,
       correo: newUser.correo,
