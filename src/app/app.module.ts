@@ -71,7 +71,7 @@ const routes: Routes = [
   { path: 'login', component: LoginAdminComponent },
   { path: '', component: ViewLoginComponent },
   { path: 'home', component: ViewUserHomeComponent },
-  { path: 'login', component: LoginFbComponent },
+  // { path: 'login', component: LoginFbComponent },
   { path: 'coordi', component: ViewCoorComponent, canActivate: [AuthGuard] },
   { path: 'administrador', component: ViewAdministradorComponent, canActivate: [AuthGuard] },
   { path: 'dev', component: ViewDevComponent, canActivate: [AuthGuard]},
