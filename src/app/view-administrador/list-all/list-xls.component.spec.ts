@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewCoorComponent } from './view-coor.component';
+import { ListXlsComponent } from './list-xls.component';
 
-describe('ViewCoorComponent', () => {
-  let component: ViewCoorComponent;
-  let fixture: ComponentFixture<ViewCoorComponent>;
+describe('ListXlsComponent', () => {
+  let component: ListXlsComponent;
+  let fixture: ComponentFixture<ListXlsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewCoorComponent ]
+      declarations: [ ListXlsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ViewCoorComponent);
+    fixture = TestBed.createComponent(ListXlsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

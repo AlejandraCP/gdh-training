@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { VerRegistroComponent } from './../ver-registro/ver-registro.component';
 
 //models
 import { CursoModel } from '../../models/cursos';
@@ -25,7 +24,8 @@ export class MisCursosComponent implements OnInit {
   public currentYear: any;
   public dayOfMonthArr: any[];
   cursosList: any[];
-
+  horariosList: any[];
+  monthNames: any[];
   constructor( public misCursosService: MisCursosService) { }
 
   public showRegistro: boolean;
@@ -33,9 +33,8 @@ export class MisCursosComponent implements OnInit {
     ngOnInit() {
       this.showRegistro = false;
 
-      const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-        "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre"
-      ];
+      this.monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+        "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre"];
 
       this.days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
@@ -47,18 +46,18 @@ export class MisCursosComponent implements OnInit {
       this.currentYear = this.currentYear.toString();
 
       this.months = [
-        { id: 1, month: monthNames[0], number: '01' },
-        { id: 2, month: monthNames[1], number: '02' },
-        { id: 3, month: monthNames[2], number: '03' },
-        { id: 4, month: monthNames[3], number: '04' },
-        { id: 5, month: monthNames[4], number: '05' },
-        { id: 6, month: monthNames[5], number: '06' },
-        { id: 7, month: monthNames[6], number: '07' },
-        { id: 8, month: monthNames[7], number: '08' },
-        { id: 9, month: monthNames[8], number: '09' },
-        { id: 10, month: monthNames[9], number: '10' },
-        { id: 11, month: monthNames[10], number: '11' },
-        { id: 12, month: monthNames[11], number: '12' }
+        { id: 1, month: this.monthNames[0], number: '01' },
+        { id: 2, month: this.monthNames[1], number: '02' },
+        { id: 3, month: this.monthNames[2], number: '03' },
+        { id: 4, month: this.monthNames[3], number: '04' },
+        { id: 5, month: this.monthNames[4], number: '05' },
+        { id: 6, month: this.monthNames[5], number: '06' },
+        { id: 7, month: this.monthNames[6], number: '07' },
+        { id: 8, month: this.monthNames[7], number: '08' },
+        { id: 9, month: this.monthNames[8], number: '09' },
+        { id: 10, month: this.monthNames[9], number: '10' },
+        { id: 11, month: this.monthNames[10], number: '11' },
+        { id: 12, month: this.monthNames[11], number: '12' }
       ];
       
       this.years = [
@@ -81,34 +80,89 @@ export class MisCursosComponent implements OnInit {
         }
       }
 
-      // this.selectedValue = this.months[0];
-      var currentDate = '/' + this.currentMonth + '/' + this.currentYear
+      var currentDate = '/' + this.currentMonth + '/' + this.currentYear;
 
       this.years.forEach(element => {
         if (element.year === this.currentYear) {
         }
       });
 
+
       this.misCursosService.getCursos()
-      .snapshotChanges()
-      .subscribe(item => {   
-        this.cursosList = [];
-        item.forEach(elem => {
-          let x = elem.payload.toJSON();
-          x["$key"] = elem.key;
-          this.cursosList.push(x);
+        .snapshotChanges()
+        .subscribe(item => {
+          this.cursosList = [];
+          item.forEach(elem => {
+            let x = elem.payload.toJSON();
+            x['$key'] = elem.key;
+            this.misCursosService.getHorarios(elem.key)
+              .snapshotChanges()
+              .subscribe(item1 => {
+                this.horariosList = [];
+                item1.forEach(e => {
+                  let y = e.payload.toJSON();
+                  y['$key'] = e.key;
+                  this.horariosList.push(y);
+                });
+                let result = this.horariosList.reduce(function(res, obj) {
+                  return (obj.sesionId < res.sesionId) ? obj : res;
+                }); 
+                let d = new Date(this.currentYear,parseInt((result.fecha).slice(3,5))-1);
+                let n = this.monthNames[d.getMonth()];
+                x['mesInicio'] = n;
+                x['diaInicio'] = (result.fecha).slice(0,2);
+                              
+                this.cursosList.push(x);         
+              });   
+          });
         });
-        console.log(this.cursosList);
-        
-      });
     }
   
     toggleRegistro() {
       this.showRegistro = !this.showRegistro;
     }
-
-    crearCurso(){
-      
+    selectYear(x) {
     }
+  
+    selectMonth(x) {
+    }
+
+    getCursoMes(month, year) {
+      let currentMonth = month.number;
+      let currentYear = year.year;
+      this.misCursosService.getCursos()
+        .snapshotChanges()
+        .subscribe(item => {
+          this.cursosList = [];
+          item.forEach(elem => {
+            let x = elem.payload.toJSON();
+            x['$key'] = elem.key;
+            this.misCursosService.getHorarios(elem.key)
+              .snapshotChanges()
+              .subscribe(item1 => {
+                this.horariosList = [];
+                item1.forEach(e => {
+                  let y = e.payload.toJSON();
+                  y['$key'] = e.key;
+                  this.horariosList.push(y);
+                });
+                let result = this.horariosList.reduce((res, obj) => {
+                  return (obj.sesionId < res.sesionId) ? obj : res;
+                }); 
+                let d = new Date(this.currentYear,parseInt((result.fecha).slice(3,5))-1);
+                let n = this.monthNames[d.getMonth()];
+                x['mesInicio'] = n;
+                x['diaInicio'] = (result.fecha).slice(0,2);
+                this.horariosList.forEach(element => {
+                  if (element['fecha'].substring(3) === `${currentMonth}/${currentYear}`) {
+                    if (!this.cursosList.includes(x)) {
+                      this.cursosList.push(x)
+                    }
+                  }
+                });     
+              });   
+          });
+        });
+      }
 
 }

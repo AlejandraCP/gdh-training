@@ -8,6 +8,7 @@ import { CursoModel } from '../models/cursos';
 @Injectable()
 export class MisCursosService {
   cursosList: AngularFireList<any>;
+  horariosList: AngularFireList<any>;
   newCourse: CursoModel = new CursoModel();
 
   private CARPETA_IMAGENES = 'img';
@@ -17,6 +18,10 @@ export class MisCursosService {
   getCursos() {
     this.cursosList = this.firebase.list('cursos');
     return this.cursosList;
+  }
+  getHorarios($key){
+    this.horariosList = this.firebase.list('cursos/'+$key+'/horario');
+    return this.horariosList;
   }
 
   // cargarImagenesFirebase( curso: CursoModel[]){

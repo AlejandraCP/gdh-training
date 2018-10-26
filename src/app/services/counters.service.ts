@@ -16,7 +16,6 @@ export class CountersService {
 
   updateTeacherId($key: string, teacherId: number) {
     this.counterList.update($key, {teacherId: teacherId})
-
   }
 
 }

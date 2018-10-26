@@ -15,37 +15,37 @@ export class UserService {
   constructor(private firebase:AngularFireDatabase) { }
 
   getUser(){
-    this.userList = this.firebase.list('users');
+    this.userList = this.firebase.list('usuarios');
     return this.userList;
   }
 
-  insertUser(user: UserModel){
-    this.userList.push({
-      mail: user.mail,
-      reserved: user.reserved,
-      countReserved: user.countReserved,
-      countAgendas: user.countAgendas,
-      messageEvent: user.messageEvent
-    });
-  }
+  // insertUser(user: UserModel){
+  //   this.userList.push({
+  //     mail: user.mail,
+  //     reserved: user.reserved,
+  //     countReserved: user.countReserved,
+  //     countAgendas: user.countAgendas,
+  //     messageEvent: user.messageEvent
+  //   });
+  // }
 
-  updateUser(key: string, user: UserModel){
-    this.userList.update(user.$key,{
-      mail: user.mail,
-      reserved: user.reserved,
-      countReserved: user.countReserved,
-      countAgendas: user.countAgendas,
-      messageEvent: user.messageEvent
-    });
-  }
+  // updateUser(key: string, user: UserModel){
+  //   this.userList.update(user.$key,{
+  //     mail: user.mail,
+  //     reserved: user.reserved,
+  //     countReserved: user.countReserved,
+  //     countAgendas: user.countAgendas,
+  //     messageEvent: user.messageEvent
+  //   });
+  // }
 
-  updateUserReset($key:string) {
-    this.userList.update($key, {
-      countAgendas: 0,
-      countReserved: 0,
-      messageEvent: '',
-      reserved: false
-    })
-  }
+  // updateUserReset($key:string) {
+  //   this.userList.update($key, {
+  //     countAgendas: 0,
+  //     countReserved: 0,
+  //     messageEvent: '',
+  //     reserved: false
+  //   })
+  // }
 
 }

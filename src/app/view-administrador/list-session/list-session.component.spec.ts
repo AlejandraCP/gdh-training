@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewAdminComponent } from './view-admin.component';
+import { ListSessionComponent } from './list-session.component';
 
-describe('ViewAdminComponent', () => {
-  let component: ViewAdminComponent;
-  let fixture: ComponentFixture<ViewAdminComponent>;
+describe('ListSessionComponent', () => {
+  let component: ListSessionComponent;
+  let fixture: ComponentFixture<ListSessionComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewAdminComponent ]
+      declarations: [ ListSessionComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ViewAdminComponent);
+    fixture = TestBed.createComponent(ListSessionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
