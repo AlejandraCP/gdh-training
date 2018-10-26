@@ -7,9 +7,6 @@ import { UserGDH } from '../models/cursosGDH';
 
 @Injectable()
 export class CoursesService {
-  cursosColletion: AngularFirestoreCollection<any>;
-  cursos: Observable<{}[]>;
-  cursosDoc: AngularFirestoreDocument<any>;
   cursosList: AngularFireList<any>;
   cursosListGroup: AngularFireList<any>;
   cursosListS1: AngularFireList<any> = this.firebase.list('cursos/sesion1');
@@ -19,8 +16,6 @@ export class CoursesService {
   newUser: UserGDH = new UserGDH();
 
   constructor( private firebase: AngularFireDatabase) { }
-
-  // this.cursosListS1 = this.firebase.list('cursos/sesion1');
 
   getCursos() {
     this.cursosList = this.firebase.list('cursos');
@@ -36,13 +31,16 @@ export class CoursesService {
     this.cursosListS1.push({
       dni: newUser.dni,
       nombre: newUser.nombre,
-      area: newUser.area,
       puesto: newUser.puesto,
       asistencia: newUser.asistencia,
       correo: newUser.correo,
       mesCapacitacion: newUser.mesCapacitacion,
       numHoras: newUser.numHoras,
-      nombreCurso: newUser.nombreCurso
+      nombreCurso: newUser.nombreCurso,
+      vp: newUser.vp,
+      division: newUser.division,
+      departamento: newUser.departamento,
+      codigo: newUser.codigo
     })
   }
 
@@ -50,13 +48,16 @@ export class CoursesService {
     this.cursosListS2.push({
       dni: newUser.dni,
       nombre: newUser.nombre,
-      area: newUser.area,
       puesto: newUser.puesto,
       asistencia: newUser.asistencia,
       correo: newUser.correo,
       mesCapacitacion: newUser.mesCapacitacion,
       numHoras: newUser.numHoras,
-      nombreCurso: newUser.nombreCurso
+      nombreCurso: newUser.nombreCurso,
+      vp: newUser.vp,
+      division: newUser.division,
+      departamento: newUser.departamento,
+      codigo: newUser.codigo
     })
   }
 
@@ -64,13 +65,16 @@ export class CoursesService {
     this.cursosListS3.push({
       dni: newUser.dni,
       nombre: newUser.nombre,
-      area: newUser.area,
       puesto: newUser.puesto,
       asistencia: newUser.asistencia,
       correo: newUser.correo,
       mesCapacitacion: newUser.mesCapacitacion,
       numHoras: newUser.numHoras,
-      nombreCurso: newUser.nombreCurso
+      nombreCurso: newUser.nombreCurso,
+      vp: newUser.vp,
+      division: newUser.division,
+      departamento: newUser.departamento,
+      codigo: newUser.codigo
     })
   }
 
@@ -78,13 +82,16 @@ export class CoursesService {
     this.cursosListS4.push({
       dni: newUser.dni,
       nombre: newUser.nombre,
-      area: newUser.area,
       puesto: newUser.puesto,
       asistencia: newUser.asistencia,
       correo: newUser.correo,
       mesCapacitacion: newUser.mesCapacitacion,
       numHoras: newUser.numHoras,
-      nombreCurso: newUser.nombreCurso
+      nombreCurso: newUser.nombreCurso,
+      vp: newUser.vp,
+      division: newUser.division,
+      departamento: newUser.departamento,
+      codigo: newUser.codigo
     })
   }
 
