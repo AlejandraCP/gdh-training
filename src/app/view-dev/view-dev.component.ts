@@ -7,8 +7,7 @@ import { UserGDH } from './../models/cursosGDH';
 
 @Component({
   selector: 'app-view-dev',
-  templateUrl: './view-dev.component.html',
-  styleUrls: ['./view-dev.component.css']
+  templateUrl: './view-dev.component.html'
 })
 export class ViewDevComponent implements OnInit {
   public isLogin: boolean;

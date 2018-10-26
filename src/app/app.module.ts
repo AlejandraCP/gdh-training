@@ -38,6 +38,7 @@ import { CreateTeacherService } from './services/create-teacher.service';
 import { CountersService } from './services/counters.service';
 import { CoursesService } from './services/courses.service';
 
+
 import { MisCursosService } from './services/mis-cursos.service';
 import { InscripcionesService } from './services/inscripciones.service';
 
@@ -59,6 +60,7 @@ import { ListXlsComponent } from './view-administrador/list-all/list-xls.compone
 import { VerRegistroComponent } from './view-administrador/ver-registro/ver-registro.component';
 import { CoursesCoorComponent } from './courses-coor/courses-coor.component';
 import { ListSessionComponent } from './view-administrador/list-session/list-session.component';
+import { ViewDevComponent } from './view-dev/view-dev.component';
 
 
 const routes: Routes = [
@@ -69,6 +71,7 @@ const routes: Routes = [
   { path: 'administrador', component: ViewAdministradorComponent, canActivate: [AuthGuard] },
   { path: 'registros/:id/:pag', component: VerRegistroComponent, canActivate: [AuthGuard] },
   { path: 'coor', component: CoursesCoorComponent, canActivate: [AuthGuard]},
+  { path: 'dev', component: ViewDevComponent, canActivate: [AuthGuard]},
   { path: '**', component: NotFoundPageComponent},
 ];
 
@@ -92,10 +95,11 @@ const routes: Routes = [
     UploadXlsComponent,
     ListXlsComponent,
     ListSessionComponent,
-    ListSessionComponent
+    ListSessionComponent,
+    ViewDevComponent
   ],
   imports: [
-    AngularFireAuthModule,
+  AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     AngularFirestoreModule,
