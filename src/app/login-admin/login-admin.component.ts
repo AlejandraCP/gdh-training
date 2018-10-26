@@ -32,7 +32,7 @@ export class LoginAdminComponent implements OnInit {
         } else if (
           auth.email === 'coor@inteligogroup.com'
         ) {
-          this.router.navigate(['coor']);
+          this.router.navigate(['/coor']);
         } else if (
           auth.email === 'acabrera@inteligogroup.com' ||
           auth.email === 'mllamocca@inteligogroup.com'

@@ -25,7 +25,14 @@ import { LoginAdminComponent } from './login-admin/login-admin.component';
 import { ViewAdministradorComponent } from './view-administrador/view-administrador.component';
 import { CrearCursoComponent } from './view-administrador/crear-curso/crear-curso.component';
 import { MisCursosComponent } from './view-administrador/mis-cursos/mis-cursos.component';
+import { UploadXlsComponent } from './view-administrador/upload-xls/upload-xls.component';
+import { ListXlsComponent } from './view-administrador/list-all/list-xls.component';
+import { VerRegistroComponent } from './view-administrador/ver-registro/ver-registro.component';
+import { CoursesCoorComponent } from './courses-coor/courses-coor.component';
+import { ListSessionComponent } from './view-administrador/list-session/list-session.component';
+import { ViewDevComponent } from './view-dev/view-dev.component';
 
+//services
 import { HttpService } from './shared/http.service';
 import { AuthService } from './auth/auth.service';
 import { HomeService } from './home/home.service';
@@ -37,7 +44,6 @@ import { BoolSelectExpoService } from './services/bool-select-expo.service';
 import { CreateTeacherService } from './services/create-teacher.service';
 import { CountersService } from './services/counters.service';
 import { CoursesService } from './services/courses.service';
-
 import { MisCursosService } from './services/mis-cursos.service';
 import { InscripcionesService } from './services/inscripciones.service';
 
@@ -54,33 +60,28 @@ import { environment } from '../environments/environment';
 // guard
 import { AuthGuard } from './guards/auth.guard';
 import { SidebarDirective } from './directives/sidebar.directive';
-import { UploadXlsComponent } from './view-administrador/upload-xls/upload-xls.component';
-import { ListXlsComponent } from './view-administrador/list-all/list-xls.component';
-import { VerRegistroComponent } from './view-administrador/ver-registro/ver-registro.component';
-import { CoursesCoorComponent } from './courses-coor/courses-coor.component';
-import { ListSessionComponent } from './view-administrador/list-session/list-session.component';
 
 
 const routes: Routes = [
   { path: 'login', component: LoginAdminComponent },
   { path: '', component: ViewLoginComponent },
   { path: 'home', component: ViewUserHomeComponent },
-  { path: 'login', component: LoginFbComponent },
+  // { path: 'login', component: LoginFbComponent },
   { path: 'administrador', component: ViewAdministradorComponent, canActivate: [AuthGuard] },
   { path: 'registros/:id/:pag', component: VerRegistroComponent, canActivate: [AuthGuard] },
-  { path: '**', component: NotFoundPageComponent},
-  { path: 'coor', component: CoursesCoorComponent, canActivate: [AuthGuard]}
+  { path: 'coor', component: CoursesCoorComponent, canActivate: [AuthGuard]},
+  { path: 'dev', component: ViewDevComponent, canActivate: [AuthGuard]},
+  { path: '**', component: NotFoundPageComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
+    // LoginComponent,
     ViewLoginComponent,
-    LoginFbComponent,
+    // LoginFbComponent,
     ViewAdministradorComponent,
     NotFoundPageComponent,
-    LoginAdminComponent,
     LoginAdminComponent,
     ViewAdministradorComponent,
     CrearCursoComponent,
@@ -92,7 +93,7 @@ const routes: Routes = [
     UploadXlsComponent,
     ListXlsComponent,
     ListSessionComponent,
-    ListSessionComponent
+    ViewDevComponent
   ],
   imports: [
     AngularFireAuthModule,
