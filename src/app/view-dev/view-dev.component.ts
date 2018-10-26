@@ -74,9 +74,11 @@ export class ViewDevComponent implements OnInit {
     if (userForm.value.$key == null) {
       userForm.value.asistencia = false;
       userForm.value.mesCapacitacion = 'Noviembre';
-      userForm.value.numHoras = 5;
-      userForm.value.nombreCurso = 'Scrum';
+      userForm.value.numHoras = 3.0;
+      userForm.value.nombreCurso = 'Tu Bienestar Profesional';
       userForm.value.codigo = ' - ';
+      userForm.value.division = ' - ';
+      userForm.value.departamento = ' - ';
       if (userForm.value.sesion === 'sesion1') {
         this.coursesServices.InsertUserS1(userForm.value)
       } else if (userForm.value.sesion === 'sesion2') {
