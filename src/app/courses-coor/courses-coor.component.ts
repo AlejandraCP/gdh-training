@@ -32,7 +32,10 @@ export class CoursesCoorComponent implements OnInit {
            x['$key'] = elem.key;
            this.userSesion1.push(x)
          })
-     });
+         this.userSesion1.sort(this.sortOrder);
+         console.log(this.userSesion1);
+         
+     });     
 
       // get list sesion2
       this.coursesService.getGroup('sesion2')
@@ -85,6 +88,12 @@ export class CoursesCoorComponent implements OnInit {
 
   updateUserAsistS4($key: string, boolAssist: boolean) {
     this.coursesService.updateAsistenciaS4($key,!boolAssist)
+  }
+
+  sortOrder(a,b) {
+    console.log(a.nombre.replace(/\s/g, '').toLowerCase());
+    
+    return a.nombres.toLowerCase() - b.nombre.toLowerCase();
   }
 
   logOut() {
