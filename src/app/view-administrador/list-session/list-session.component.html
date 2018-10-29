@@ -23,14 +23,14 @@
   <div class="tab-pane fade show active" id="pills-session1" role="tabpanel" aria-labelledby="pills-session1-tab">
     <table id="tbl-ver-sesion1" class="tbl-ver-registro tg border-left border-bottom">
       <tr>
-          <th class="tg-fs8j text-center font-weight-bold"> DNI</th>
+          <th class="tg-fs8j text-center font-weight-bold"> Correos</th>
           <th class="tg-fs8j text-center font-weight-bold"> VP (Actual)</th>
-          <th class="tg-fs8j text-center font-weight-bold"> Área</th>
-          <th class="tg-fs8j text-center font-weight-bold"> Sección</th>
-          <th class="tg-fs8j text-center font-weight-bold"> Participante</th>
+          <th class="tg-fs8j text-center font-weight-bold"> División</th>
+          <th class="tg-fs8j text-center font-weight-bold"> Departamento (Actual)</th>
           <th class="tg-fs8j text-center font-weight-bold"> Puesto</th>
-          <th class="tg-fs8j text-center font-weight-bold"> Correo</th>
-          <th class="tg-fs8j text-center font-weight-bold"> Grupo</th>
+          <th class="tg-fs8j text-center font-weight-bold"> Apellidos y Nombres</th>
+          <th class="tg-fs8j text-center font-weight-bold"> DNI</th>
+          <th class="tg-fs8j text-center font-weight-bold"> CODIGO</th>
           <th class="tg-fs8j text-center font-weight-bold"> Mes</th>
           <th class="tg-fs8j text-center font-weight-bold"> Capacitación</th>
           <th class="tg-fs8j text-center font-weight-bold"> Num de horas</th>
@@ -38,13 +38,13 @@
       </tr>
      
       <tr *ngFor="let itemRegisterSession of session1List">
-          <td class="tg-fs8j"> {{itemRegisterSession.dni}} </td>
-          <td class="tg-fs8j"> {{itemRegisterSession.vp}}</td>
-          <td class="tg-fs8j"> {{itemRegisterSession.area}} </td>
-          <td class="tg-fs8j"> {{itemRegisterSession.seccion}}</td>
-          <td class="tg-fs8j"> {{itemRegisterSession.nombre}}</td>
+          <td class="tg-fs8j"> {{itemRegisterSession.correo}} </td>
+          <td class="tg-fs8j"> {{itemRegisterSession.vp}} </td>
+          <td class="tg-fs8j"> {{itemRegisterSession.division}}</td>
+          <td class="tg-fs8j"> {{itemRegisterSession.departamento}}</td>
           <td class="tg-fs8j"> {{itemRegisterSession.puesto}}</td>
-          <td class="tg-fs8j"> {{itemRegisterSession.correo}}</td>
+          <td class="tg-fs8j"> {{itemRegisterSession.nombre}}</td>
+          <td class="tg-fs8j"> {{itemRegisterSession.dni}}</td>
           <td class="tg-fs8j"> {{itemRegisterSession.codigo}}</td>
           <td class="tg-fs8j"> {{itemRegisterSession.mesCapacitacion}}</td>
           <td class="tg-fs8j"> {{itemRegisterSession.nombreCurso}}</td>
@@ -58,14 +58,14 @@
   <div class="tab-pane fade" id="pills-session2" role="tabpanel" aria-labelledby="pills-session2-tab">
     <table id="tbl-ver-sesion2" class="tbl-ver-registro tg border-left border-bottom">
       <tr>
-          <th class="tg-fs8j text-center font-weight-bold"> DNI</th>
+          <th class="tg-fs8j text-center font-weight-bold"> Correos</th>
           <th class="tg-fs8j text-center font-weight-bold"> VP (Actual)</th>
-          <th class="tg-fs8j text-center font-weight-bold"> Área</th>
-          <th class="tg-fs8j text-center font-weight-bold"> Sección</th>
-          <th class="tg-fs8j text-center font-weight-bold"> Participante</th>
+          <th class="tg-fs8j text-center font-weight-bold"> División</th>
+          <th class="tg-fs8j text-center font-weight-bold"> Departamento (Actual)</th>
           <th class="tg-fs8j text-center font-weight-bold"> Puesto</th>
-          <th class="tg-fs8j text-center font-weight-bold"> Correo</th>
-          <th class="tg-fs8j text-center font-weight-bold"> Grupo</th>
+          <th class="tg-fs8j text-center font-weight-bold"> Apellidos y Nombres</th>
+          <th class="tg-fs8j text-center font-weight-bold"> DNI</th>
+          <th class="tg-fs8j text-center font-weight-bold"> CODIGO</th>
           <th class="tg-fs8j text-center font-weight-bold"> Mes</th>
           <th class="tg-fs8j text-center font-weight-bold"> Capacitación</th>
           <th class="tg-fs8j text-center font-weight-bold"> Num de horas</th>
@@ -73,13 +73,13 @@
       </tr>
      
       <tr *ngFor="let itemRegisterSession of session2List">
-          <td class="tg-fs8j"> {{itemRegisterSession.dni}} </td>
-          <td class="tg-fs8j"> {{itemRegisterSession.vp}}</td>
-          <td class="tg-fs8j"> {{itemRegisterSession.area}} </td>
-          <td class="tg-fs8j"> {{itemRegisterSession.seccion}}</td>
-          <td class="tg-fs8j"> {{itemRegisterSession.nombre}}</td>
+          <td class="tg-fs8j"> {{itemRegisterSession.correo}} </td>
+          <td class="tg-fs8j"> {{itemRegisterSession.vp}} </td>
+          <td class="tg-fs8j"> {{itemRegisterSession.division}}</td>
+          <td class="tg-fs8j"> {{itemRegisterSession.departamento}}</td>
           <td class="tg-fs8j"> {{itemRegisterSession.puesto}}</td>
-          <td class="tg-fs8j"> {{itemRegisterSession.correo}}</td>
+          <td class="tg-fs8j"> {{itemRegisterSession.nombre}}</td>
+          <td class="tg-fs8j"> {{itemRegisterSession.dni}}</td>
           <td class="tg-fs8j"> {{itemRegisterSession.codigo}}</td>
           <td class="tg-fs8j"> {{itemRegisterSession.mesCapacitacion}}</td>
           <td class="tg-fs8j"> {{itemRegisterSession.nombreCurso}}</td>
@@ -93,14 +93,14 @@
   <div class="tab-pane fade" id="pills-session3" role="tabpanel" aria-labelledby="pills-session3-tab">
     <table id="tbl-ver-sesion3" class="tbl-ver-registro tg border-left border-bottom">
       <tr>
-          <th class="tg-fs8j text-center font-weight-bold"> DNI</th>
+          <th class="tg-fs8j text-center font-weight-bold"> Correos</th>
           <th class="tg-fs8j text-center font-weight-bold"> VP (Actual)</th>
-          <th class="tg-fs8j text-center font-weight-bold"> Área</th>
-          <th class="tg-fs8j text-center font-weight-bold"> Sección</th>
-          <th class="tg-fs8j text-center font-weight-bold"> Participante</th>
+          <th class="tg-fs8j text-center font-weight-bold"> División</th>
+          <th class="tg-fs8j text-center font-weight-bold"> Departamento (Actual)</th>
           <th class="tg-fs8j text-center font-weight-bold"> Puesto</th>
-          <th class="tg-fs8j text-center font-weight-bold"> Correo</th>
-          <th class="tg-fs8j text-center font-weight-bold"> Grupo</th>
+          <th class="tg-fs8j text-center font-weight-bold"> Apellidos y Nombres</th>
+          <th class="tg-fs8j text-center font-weight-bold"> DNI</th>
+          <th class="tg-fs8j text-center font-weight-bold"> CODIGO</th>
           <th class="tg-fs8j text-center font-weight-bold"> Mes</th>
           <th class="tg-fs8j text-center font-weight-bold"> Capacitación</th>
           <th class="tg-fs8j text-center font-weight-bold"> Num de horas</th>
@@ -108,13 +108,13 @@
       </tr>
      
       <tr *ngFor="let itemRegisterSession of session3List">
-          <td class="tg-fs8j"> {{itemRegisterSession.dni}} </td>
-          <td class="tg-fs8j"> {{itemRegisterSession.vp}}</td>
-          <td class="tg-fs8j"> {{itemRegisterSession.area}} </td>
-          <td class="tg-fs8j"> {{itemRegisterSession.seccion}}</td>
-          <td class="tg-fs8j"> {{itemRegisterSession.nombre}}</td>
+          <td class="tg-fs8j"> {{itemRegisterSession.correo}} </td>
+          <td class="tg-fs8j"> {{itemRegisterSession.vp}} </td>
+          <td class="tg-fs8j"> {{itemRegisterSession.division}}</td>
+          <td class="tg-fs8j"> {{itemRegisterSession.departamento}}</td>
           <td class="tg-fs8j"> {{itemRegisterSession.puesto}}</td>
-          <td class="tg-fs8j"> {{itemRegisterSession.correo}}</td>
+          <td class="tg-fs8j"> {{itemRegisterSession.nombre}}</td>
+          <td class="tg-fs8j"> {{itemRegisterSession.dni}}</td>
           <td class="tg-fs8j"> {{itemRegisterSession.codigo}}</td>
           <td class="tg-fs8j"> {{itemRegisterSession.mesCapacitacion}}</td>
           <td class="tg-fs8j"> {{itemRegisterSession.nombreCurso}}</td>
@@ -128,14 +128,14 @@
   <div class="tab-pane fade" id="pills-session4" role="tabpanel" aria-labelledby="pills-session4-tab">
     <table id="tbl-ver-sesion4" class="tbl-ver-registro tg border-left border-bottom">
       <tr>
-          <th class="tg-fs8j text-center font-weight-bold"> DNI</th>
+          <th class="tg-fs8j text-center font-weight-bold"> Correos</th>
           <th class="tg-fs8j text-center font-weight-bold"> VP (Actual)</th>
-          <th class="tg-fs8j text-center font-weight-bold"> Área</th>
-          <th class="tg-fs8j text-center font-weight-bold"> Sección</th>
-          <th class="tg-fs8j text-center font-weight-bold"> Participante</th>
+          <th class="tg-fs8j text-center font-weight-bold"> División</th>
+          <th class="tg-fs8j text-center font-weight-bold"> Departamento (Actual)</th>
           <th class="tg-fs8j text-center font-weight-bold"> Puesto</th>
-          <th class="tg-fs8j text-center font-weight-bold"> Correo</th>
-          <th class="tg-fs8j text-center font-weight-bold"> Grupo</th>
+          <th class="tg-fs8j text-center font-weight-bold"> Apellidos y Nombres</th>
+          <th class="tg-fs8j text-center font-weight-bold"> DNI</th>
+          <th class="tg-fs8j text-center font-weight-bold"> CODIGO</th>
           <th class="tg-fs8j text-center font-weight-bold"> Mes</th>
           <th class="tg-fs8j text-center font-weight-bold"> Capacitación</th>
           <th class="tg-fs8j text-center font-weight-bold"> Num de horas</th>
@@ -143,13 +143,13 @@
       </tr>
      
       <tr *ngFor="let itemRegisterSession of session4List">
-          <td class="tg-fs8j"> {{itemRegisterSession.dni}} </td>
-          <td class="tg-fs8j"> {{itemRegisterSession.vp}}</td>
-          <td class="tg-fs8j"> {{itemRegisterSession.area}} </td>
-          <td class="tg-fs8j"> {{itemRegisterSession.seccion}}</td>
-          <td class="tg-fs8j"> {{itemRegisterSession.nombre}}</td>
+          <td class="tg-fs8j"> {{itemRegisterSession.correo}} </td>
+          <td class="tg-fs8j"> {{itemRegisterSession.vp}} </td>
+          <td class="tg-fs8j"> {{itemRegisterSession.division}}</td>
+          <td class="tg-fs8j"> {{itemRegisterSession.departamento}}</td>
           <td class="tg-fs8j"> {{itemRegisterSession.puesto}}</td>
-          <td class="tg-fs8j"> {{itemRegisterSession.correo}}</td>
+          <td class="tg-fs8j"> {{itemRegisterSession.nombre}}</td>
+          <td class="tg-fs8j"> {{itemRegisterSession.dni}}</td>
           <td class="tg-fs8j"> {{itemRegisterSession.codigo}}</td>
           <td class="tg-fs8j"> {{itemRegisterSession.mesCapacitacion}}</td>
           <td class="tg-fs8j"> {{itemRegisterSession.nombreCurso}}</td>
