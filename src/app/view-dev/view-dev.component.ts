@@ -77,6 +77,8 @@ export class ViewDevComponent implements OnInit {
       userForm.value.numHoras = 5;
       userForm.value.nombreCurso = 'Scrum';
       userForm.value.codigo = ' - ';
+      userForm.value.division = '';
+      userForm.value.departamento = '';
       if (userForm.value.sesion === 'sesion1') {
         this.coursesServices.InsertUserS1(userForm.value)
       } else if (userForm.value.sesion === 'sesion2') {
