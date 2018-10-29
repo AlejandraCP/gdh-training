@@ -4,46 +4,55 @@
         <img _ngcontent-c0="" alt="logo Inteligo" src="../../assets/images/logo-gris.png">
       </div>
       <div _ngcontent-c0="" class="col-4 text-center">
-        <span _ngcontent-c0="" class="mr-4">Intraining | Mi Bienestar</span>
+        <span _ngcontent-c0="" >Intraining</span>
+        <span>|</span>
+        <span class="mr-4" _ngcontent-c0="">Mi Bienestar</span>
       </div>
       <div _ngcontent-c0="" class="col-4 text-right">
         <a href="/" (click)="logOut()">Salir</a>
       </div>
     </nav>
     <div class="container-fluid">
-      <div class="container mt-4">
-          <ul class="nav nav-tabs row text-center" id="myTab" role="tablist">
-                  <li class="nav-item col-3">
-                      <a class="nav-link btn btn-blue mx-1 " id="sesion1-tab" data-toggle="tab" href="#sesion1" role="tab" aria-controls="sesion1" aria-selected="true">Sesión 1</a>
-                    </li>
-                    <li class="nav-item col-3">
-                      <a class="nav-link btn btn-blue mx-1" id="sesion2-tab" data-toggle="tab" href="#sesion2" role="tab" aria-controls="sesion2" aria-selected="false">Sesión 2</a>
-                    </li>
-                    <li class="nav-item col-3">
-                      <a class="nav-link btn btn-blue mx-1" id="sesion3-tab" data-toggle="tab" href="#sesion3" role="tab" aria-controls="sesion3" aria-selected="false">Sesión 3</a>
-                    </li>
-                    <li class="nav-item col-3">
-                      <a class="nav-link btn btn-blue mx-1" id="sesion4-tab" data-toggle="tab" href="#sesion4" role="tab" aria-controls="sesion4" aria-selected="false">Sesión 4</a>
-                    </li>                  
-              </ul>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-8 offset-md-2">
+              <div class="container mt-4">
+                  <ul class="nav nav-tabs row text-center" id="myTab" role="tablist">
+                          <li class="nav-item col-3">
+                              <a class="nav-link btn btn-blue mx-1 " id="sesion1-tab" data-toggle="tab" href="#sesion1" role="tab" aria-controls="sesion1" aria-selected="true">Sesión 1</a>
+                            </li>
+                            <li class="nav-item col-3">
+                              <a class="nav-link btn btn-blue mx-1" id="sesion2-tab" data-toggle="tab" href="#sesion2" role="tab" aria-controls="sesion2" aria-selected="false">Sesión 2</a>
+                            </li>
+                            <li class="nav-item col-3">
+                              <a class="nav-link btn btn-blue mx-1" id="sesion3-tab" data-toggle="tab" href="#sesion3" role="tab" aria-controls="sesion3" aria-selected="false">Sesión 3</a>
+                            </li>
+                            <li class="nav-item col-3">
+                              <a class="nav-link btn btn-blue mx-1" id="sesion4-tab" data-toggle="tab" href="#sesion4" role="tab" aria-controls="sesion4" aria-selected="false">Sesión 4</a>
+                            </li>                  
+                      </ul>
+              </div>
+          </div>
+        </div>
       </div>
+      
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade" id="sesion1" role="tabpanel" aria-labelledby="sesion1-tab">
               <div class="container">
                 <div class="row">
-                  <div class="col-12 mt-5">
-                      <table *ngIf="userSesion1" class="table table-sm table-bordered table-hover bg-white mt-2 text-center">
+                  <div class="col-12 col-md-8 offset-md-2 mt-5">
+                      <table *ngIf="userSesion1" class="table table-sm table-bordered table-hover bg-white mt-2 text-left">
                           <thead>
                             <tr>
-                              <th scope="col" class="w-75">Nombre</th>
-                              <th scope="col" class="nombre">Asistencia</th>
+                              <th scope="col" class="w-75">NOMBRE</th>
+                              <th scope="col" class="nombre">ASISTENCIA</th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr *ngFor="let item of userSesion1">
                               <td>{{item.nombre}}</td>
                               <td>
-                                <button [disabled]='item.asistencia'  (click)='updateUserAsistS1(item.$key, item.asistencia)'  class="rounded btn bg-btn btn-assist">
+                                <button [disabled]='item.asistencia'  (click)='updateUserAsistS1(item.$key, item.asistencia)'  class="btn bg-btn btn-assist">
                                   Asistí
                                 </button>
                               </td>
@@ -57,19 +66,19 @@
             <div class="tab-pane fade" id="sesion2" role="tabpanel" aria-labelledby="sesion2-tab">
                 <div class="container">
                     <div class="row">
-                      <div class="col-12 mt-5">
-                          <table *ngIf="userSesion2" class="table table-sm table-bordered table-hover bg-white mt-2 text-center">
+                      <div class="col-12 col-md-8 offset-md-2 mt-5">
+                          <table *ngIf="userSesion2" class="table table-sm table-bordered table-hover bg-white mt-2 text-left">
                               <thead>
                                 <tr>
-                                  <th scope="col" class="w-75">Nombre</th>
-                                  <th scope="col" class="nombre">Asistencia</th>
+                                  <th scope="col" class="w-70">NOMBRE</th>
+                                  <th scope="col" class="nombre">ASISTENCIA</th>
                                 </tr>
                               </thead>
                               <tbody>
                                 <tr *ngFor="let item of userSesion2">
                                   <td>{{item.nombre}}</td>
                                   <td>
-                                    <button [disabled]='item.asistencia' (click)='updateUserAsistS2(item.$key, item.asistencia)' class="rounded btn bg-btn btn-assist">
+                                    <button [disabled]='item.asistencia' (click)='updateUserAsistS2(item.$key, item.asistencia)' class="btn bg-btn btn-assist">
                                       Asistí
                                     </button>
                                   </td>
@@ -83,19 +92,19 @@
             <div class="tab-pane fade" id="sesion3" role="tabpanel" aria-labelledby="sesion3-tab">
                 <div class="container">
                     <div class="row">
-                      <div class="col-12 mt-5">
-                          <table *ngIf="userSesion3" class="table table-sm table-bordered table-hover bg-white mt-2 text-center">
+                      <div class="col-12 col-md-8 offset-md-2 mt-5">
+                          <table *ngIf="userSesion3" class="table table-sm table-bordered table-hover bg-white mt-2 text-left">
                               <thead>
                                 <tr>
-                                  <th scope="col" class="w-75">Nombre</th>
-                                  <th scope="col" class="nombre">Asistencia</th>
+                                  <th scope="col" class="w-75">NOMBRE</th>
+                                  <th scope="col" class="nombre">ASISTENCIA</th>
                                 </tr>
                               </thead>
                               <tbody>
                                 <tr *ngFor="let item of userSesion3">
                                   <td>{{item.nombre}}</td>
                                   <td>
-                                    <button [disabled]='item.asistencia' (click)='updateUserAsistS3(item.$key, item.asistencia)'  class="rounded btn bg-btn btn-assist">
+                                    <button [disabled]='item.asistencia' (click)='updateUserAsistS3(item.$key, item.asistencia)'  class="btn bg-btn btn-assist">
                                       Asistí
                                     </button>
                                   </td>
@@ -109,19 +118,19 @@
             <div class="tab-pane fade" id="sesion4" role="tabpanel" aria-labelledby="sesion4-tab">
                 <div class="container">
                     <div class="row">
-                      <div class="col-12 mt-5">
-                          <table *ngIf="userSesion4" class="table table-sm table-bordered table-hover bg-white mt-2 text-center">
+                      <div class="col-12 col-md-8 offset-md-2 mt-5">
+                          <table *ngIf="userSesion4" class="table table-sm table-bordered table-hover bg-white mt-2 text-left">
                               <thead>
                                 <tr>
-                                  <th scope="col" class="w-75">Nombre</th>
-                                  <th scope="col" class="nombre">Asistencia</th>
+                                  <th scope="col" class="w-75">NOMBRE</th>
+                                  <th scope="col" class="nombre">ASISTENCIA</th>
                                 </tr>
                               </thead>
                               <tbody>
                                 <tr *ngFor="let item of userSesion4">
                                   <td>{{item.nombre}}</td>
                                   <td>
-                                    <button [disabled]='item.asistencia' (click)='updateUserAsistS4(item.$key, item.asistencia)' class="rounded btn bg-btn btn-assist">
+                                    <button [disabled]='item.asistencia' (click)='updateUserAsistS4(item.$key, item.asistencia)' class="btn bg-btn btn-assist">
                                       Asistí
                                     </button>
                                   </td>
