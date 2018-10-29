@@ -63,10 +63,7 @@ import { SidebarDirective } from './directives/sidebar.directive';
 
 
 const routes: Routes = [
-  { path: 'login', component: LoginAdminComponent },
-  { path: '', component: ViewLoginComponent },
-  { path: 'home', component: ViewUserHomeComponent },
-  // { path: 'login', component: LoginFbComponent },
+  { path: '', component: LoginAdminComponent },
   { path: 'administrador', component: ViewAdministradorComponent, canActivate: [AuthGuard] },
   { path: 'registros/:id/:pag', component: VerRegistroComponent, canActivate: [AuthGuard] },
   { path: 'coor', component: CoursesCoorComponent, canActivate: [AuthGuard]},
@@ -77,9 +74,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    // LoginComponent,
     ViewLoginComponent,
-    // LoginFbComponent,
     ViewAdministradorComponent,
     NotFoundPageComponent,
     LoginAdminComponent,

@@ -10,6 +10,7 @@ import { UserGDH } from './../models/cursosGDH';
   templateUrl: './view-dev.component.html',
   styleUrls: ['./view-dev.component.css']
 })
+
 export class ViewDevComponent implements OnInit {
   public isLogin: boolean;
   public emailUser: string;
