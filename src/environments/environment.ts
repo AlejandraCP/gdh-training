@@ -6,11 +6,11 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: "AIzaSyB8kIFjUfoms_LBLgrp7WMUk1WJecf9uoo",
-    authDomain: "gdh-capacitacion.firebaseapp.com",
-    databaseURL: "https://gdh-capacitacion.firebaseio.com",
-    projectId: "gdh-capacitacion",
-    storageBucket: "gdh-capacitacion.appspot.com",
-    messagingSenderId: "741712558592"
+    apiKey: "AIzaSyBB6fA17iAoxyD0cGEyXlAOcCuRJc7v3Yg",
+    authDomain: "gdh-training.firebaseapp.com",
+    databaseURL: "https://gdh-training.firebaseio.com",
+    projectId: "gdh-training",
+    storageBucket: "gdh-training.appspot.com",
+    messagingSenderId: "161499416245"
   }
 };
