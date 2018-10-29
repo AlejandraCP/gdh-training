@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CoursesService } from './../services/courses.service';
 import { element } from 'protractor';
+import { AuthAdminService } from './../services/auth-admin.service';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class CoursesCoorComponent implements OnInit {
   public userSesion3: any[];
   public userSesion4: any[];
 
-  constructor(public coursesService: CoursesService) { }
+  constructor(public coursesService: CoursesService, public authAdminservice: AuthAdminService) { }
 
   ngOnInit() {
 
@@ -84,6 +85,10 @@ export class CoursesCoorComponent implements OnInit {
 
   updateUserAsistS4($key: string, boolAssist: boolean) {
     this.coursesService.updateAsistenciaS4($key,!boolAssist)
+  }
+
+  logOut() {
+    this.authAdminservice.logout();
   }
 
 }
