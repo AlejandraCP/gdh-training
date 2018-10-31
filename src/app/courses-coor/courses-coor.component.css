@@ -1,3 +1,9 @@
+@media(max-width: 768px) {
+  .title-course span {
+    font-size: 13px;
+  }
+}
+
 nav span {
   font-size: 1.2rem;
   font-weight: 600;
@@ -62,3 +68,4 @@ thead tr {
   outline: 0;
   box-shadow: 0 0 0 0.2rem #ffffff40;
 }
+

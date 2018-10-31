@@ -5,7 +5,6 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/take';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { AuthFirebaseService } from './../services/auth-firebase.service';
 import { AuthAdminService } from './../../app/services/auth-admin.service';
 
 @Injectable()
