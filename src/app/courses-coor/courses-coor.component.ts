@@ -32,8 +32,7 @@ export class CoursesCoorComponent implements OnInit {
            x['$key'] = elem.key;
            this.userSesion1.push(x)
          })
-         this.userSesion1.sort(this.sortOrder);
-         console.log(this.userSesion1);
+         this.userSesion1.sort((a, b) => (a.nombre < b.nombre) ? -1 : (a.nombre > b.nombre) ? 1 : 0);
          
      });     
 
@@ -47,6 +46,8 @@ export class CoursesCoorComponent implements OnInit {
           x['$key'] = elem.key;
           this.userSesion2.push(x)
         })
+        this.userSesion2.sort((a, b) => (a.nombre < b.nombre) ? -1 : (a.nombre > b.nombre) ? 1 : 0);
+
     });
 
      // get list sesion3
@@ -58,7 +59,9 @@ export class CoursesCoorComponent implements OnInit {
          let x = elem.payload.toJSON();
          x['$key'] = elem.key;
          this.userSesion3.push(x)
-       })
+       });
+       this.userSesion3.sort((a, b) => (a.nombre < b.nombre) ? -1 : (a.nombre > b.nombre) ? 1 : 0);
+
    });
 
     // get list sesion4
@@ -70,7 +73,8 @@ export class CoursesCoorComponent implements OnInit {
         let x = elem.payload.toJSON();
         x['$key'] = elem.key;
         this.userSesion4.push(x)
-      })
+      });
+      this.userSesion4.sort((a, b) => (a.nombre < b.nombre) ? -1 : (a.nombre > b.nombre) ? 1 : 0);
   });
   }
 
@@ -91,7 +95,7 @@ export class CoursesCoorComponent implements OnInit {
   }
 
   sortOrder(a,b) {
-    console.log(a.nombre.replace(/\s/g, '').toLowerCase());
+    // console.log(b.nombre);
     
     return a.nombres.toLowerCase() - b.nombre.toLowerCase();
   }
