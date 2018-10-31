@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CoursesService } from './../services/courses.service';
 import { element } from 'protractor';
+import { AuthAdminService } from './../services/auth-admin.service';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class CoursesCoorComponent implements OnInit {
   public userSesion3: any[];
   public userSesion4: any[];
 
-  constructor(public coursesService: CoursesService) { }
+  constructor(public coursesService: CoursesService, public authAdminservice: AuthAdminService) { }
 
   ngOnInit() {
 
@@ -31,7 +32,9 @@ export class CoursesCoorComponent implements OnInit {
            x['$key'] = elem.key;
            this.userSesion1.push(x)
          })
-     });
+         this.userSesion1.sort((a, b) => (a.nombre < b.nombre) ? -1 : (a.nombre > b.nombre) ? 1 : 0);
+         
+     });     
 
       // get list sesion2
       this.coursesService.getGroup('sesion2')
@@ -43,6 +46,8 @@ export class CoursesCoorComponent implements OnInit {
           x['$key'] = elem.key;
           this.userSesion2.push(x)
         })
+        this.userSesion2.sort((a, b) => (a.nombre < b.nombre) ? -1 : (a.nombre > b.nombre) ? 1 : 0);
+
     });
 
      // get list sesion3
@@ -54,7 +59,9 @@ export class CoursesCoorComponent implements OnInit {
          let x = elem.payload.toJSON();
          x['$key'] = elem.key;
          this.userSesion3.push(x)
-       })
+       });
+       this.userSesion3.sort((a, b) => (a.nombre < b.nombre) ? -1 : (a.nombre > b.nombre) ? 1 : 0);
+
    });
 
     // get list sesion4
@@ -66,7 +73,8 @@ export class CoursesCoorComponent implements OnInit {
         let x = elem.payload.toJSON();
         x['$key'] = elem.key;
         this.userSesion4.push(x)
-      })
+      });
+      this.userSesion4.sort((a, b) => (a.nombre < b.nombre) ? -1 : (a.nombre > b.nombre) ? 1 : 0);
   });
   }
 
@@ -84,6 +92,16 @@ export class CoursesCoorComponent implements OnInit {
 
   updateUserAsistS4($key: string, boolAssist: boolean) {
     this.coursesService.updateAsistenciaS4($key,!boolAssist)
+  }
+
+  sortOrder(a,b) {
+    // console.log(b.nombre);
+    
+    return a.nombres.toLowerCase() - b.nombre.toLowerCase();
+  }
+
+  logOut() {
+    this.authAdminservice.logout();
   }
 
 }

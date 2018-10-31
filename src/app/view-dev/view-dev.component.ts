@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthFirebaseService } from './../services/auth-firebase.service';
 import { element } from 'protractor';
 import { NgForm } from '@angular/forms';
 import { CoursesService } from './../services/courses.service';
 import { UserGDH } from './../models/cursosGDH';
+import { AuthAdminService } from '../services/auth-admin.service';
+
 
 @Component({
   selector: 'app-view-dev',
   templateUrl: './view-dev.component.html'
 })
+
 export class ViewDevComponent implements OnInit {
   public isLogin: boolean;
   public emailUser: string;
@@ -27,7 +29,7 @@ export class ViewDevComponent implements OnInit {
   newUser: UserGDH = new UserGDH();
 
   constructor(
-    private authFirebaseService: AuthFirebaseService,
+    private authAdminService: AuthAdminService,
     public coursesServices: CoursesService
   ) { }
 
@@ -42,7 +44,7 @@ export class ViewDevComponent implements OnInit {
 
 
     this.isLogin = false;
-    this.authFirebaseService.getAuth().subscribe(auth => {
+    this.authAdminService.getAuth().subscribe(auth => {
       if (auth) {
         this.emailUser = auth.email;
         this.isLogin = true;
@@ -59,7 +61,7 @@ export class ViewDevComponent implements OnInit {
   }
 
   logoutUser() {
-    this.authFirebaseService.logout();
+    this.authAdminService.logout();
   }
 
   resetForm(userForm?: NgForm) {
@@ -73,9 +75,11 @@ export class ViewDevComponent implements OnInit {
     if (userForm.value.$key == null) {
       userForm.value.asistencia = false;
       userForm.value.mesCapacitacion = 'Noviembre';
-      userForm.value.numHoras = 5;
-      userForm.value.nombreCurso = 'Scrum';
+      userForm.value.numHoras = 3.0; 
+      userForm.value.nombreCurso = 'Tu Bienestar Profesional';
       userForm.value.codigo = ' - ';
+      userForm.value.division = ' - ';
+      userForm.value.departamento = ' - ';
       if (userForm.value.sesion === 'sesion1') {
         this.coursesServices.InsertUserS1(userForm.value)
       } else if (userForm.value.sesion === 'sesion2') {

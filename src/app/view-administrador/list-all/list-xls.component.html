@@ -32,8 +32,8 @@
           </tr>
           <tr *ngFor="let itemRegisterSession of sessionList">
             <td class="tg-fs8j"> {{itemRegisterSession.correo}} </td>
-            <td class="tg-fs8j"> {{itemRegisterSession.vicepresidencia}} </td>
-            <td class="tg-fs8j"> {{itemRegisterSession.area}}</td>
+            <td class="tg-fs8j"> {{itemRegisterSession.vp}} </td>
+            <td class="tg-fs8j"> {{itemRegisterSession.division}}</td>
             <td class="tg-fs8j"> {{itemRegisterSession.departamento}}</td>
             <td class="tg-fs8j"> {{itemRegisterSession.puesto}}</td>
             <td class="tg-fs8j"> {{itemRegisterSession.nombre}}</td>
@@ -41,7 +41,7 @@
             <td class="tg-fs8j"> {{itemRegisterSession.codigo}}</td>
             <td class="tg-fs8j"> {{itemRegisterSession.mesCapacitacion}}</td>
             <td class="tg-fs8j"> {{itemRegisterSession.nombreCurso}}</td>
-            <td class="tg-fs8j"> {{itemRegisterSession.Horas}}</td>
+            <td class="tg-fs8j"> {{itemRegisterSession.numHoras}}</td>
             <td *ngIf="itemRegisterSession.asistencia == true" class="tg-fs8j"> OK</td>
             <td *ngIf="itemRegisterSession.asistencia == false" class="tg-fs8j"> No asistió</td>
           </tr>
@@ -76,7 +76,4 @@
 
         </table>
   </div>
-</div>
-<div *ngIf = "!showRegistro">
-  <app-mis-cursos></app-mis-cursos>
 </div>
