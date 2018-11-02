@@ -2,6 +2,14 @@
   .title-course span {
     font-size: 13px;
   }
+
+  li a {
+    font-size: 13px;
+  }
+}
+
+.container-fluid {
+  margin-top: 10vh;
 }
 
 nav span {
@@ -13,6 +21,12 @@ nav span {
   border-bottom: none;
 }
 
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+}
 .btn-blue {
   background-color: #fdfdfd;
   border: 1px solid #a1a5ac;
@@ -36,6 +50,14 @@ a {
   background-color: #4e84f1;
   font-weight: 500;
   color: #fff;
+  border-radius: 0px;
+  width: 100%;
+}
+
+.btn-assist-true {
+  background-color: #eaebee;
+  font-weight: 500;
+  color: #817a7a;
   border-radius: 0px;
   width: 100%;
 }

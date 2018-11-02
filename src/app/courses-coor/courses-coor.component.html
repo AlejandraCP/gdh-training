@@ -52,7 +52,7 @@
                             <tr *ngFor="let item of userSesion1">
                               <td>{{item.nombre}}</td>
                               <td>
-                                <button [disabled]='item.asistencia'  (click)='updateUserAsistS1(item.$key, item.asistencia)'  class="btn bg-btn btn-assist">
+                                <button [disabled]='item.asistencia' [ngClass]="item.asistencia ? 'btn-assist-true' : 'btn-assist'" (click)='updateUserAsistS1(item.$key, item.asistencia)'  class="btn bg-btn">
                                   Asistí
                                 </button>
                               </td>
