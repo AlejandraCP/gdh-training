@@ -80,6 +80,18 @@ export class ViewDevComponent implements OnInit {
       userForm.value.codigo = ' - ';
       userForm.value.division = ' - ';
       userForm.value.departamento = ' - ';
+      if(userForm.value.dni === undefined) {
+        userForm.value.dni = ' - ';
+      }
+      if(userForm.value.puesto === undefined) {
+        userForm.value.puesto = ' - ';
+      }
+      if(userForm.value.correo === undefined) {
+        userForm.value.correo = ' - ';
+      }
+      if(userForm.value.vp === undefined) {
+        userForm.value.vp = ' - ';
+      }
       if (userForm.value.sesion === 'sesion1') {
         this.coursesServices.InsertUserS1(userForm.value)
       } else if (userForm.value.sesion === 'sesion2') {
