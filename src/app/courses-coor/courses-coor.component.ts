@@ -98,30 +98,44 @@ export class CoursesCoorComponent implements OnInit {
       });
   }
 
-  change(sesion) {
+  changeToShow(sesion) {
     this.sesions = false;
     switch (sesion) {
-      case 0:
-        sesion = "sesion1";
+      case "sesion1":
         this.sesion1Box = true;
         break;
-      case 0:
-        sesion = "sesion2";
+      case "sesion2":
         this.sesion2Box = true;
         break;
-      case 0:
-        sesion = "sesion3";
+      case "sesion3":
         this.sesion3Box = true;
         break;
-      case 0:
-        sesion = "sesion4";
+      case "sesion4":
         this.sesion4Box = true;
         break;
-
       default:
         break;
     }
-    console.log(sesion);
+  }
+
+  changeToHide(sesion) {
+    this.sesions = true;
+    switch (sesion) {
+      case "sesion1":
+        this.sesion1Box = false;
+        break;
+      case "sesion2":
+        this.sesion2Box = false;
+        break;
+      case "sesion3":
+        this.sesion3Box = false;
+        break;
+      case "sesion4":
+        this.sesion4Box = false;
+        break;
+      default:
+        break;
+    }
   }
 
   showSesions() {
