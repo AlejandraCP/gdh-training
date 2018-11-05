@@ -7,7 +7,7 @@
     border-color:#dee2e6;
 }
 .tg td{
-    font-size:14px;
+    font-size:12.5px;
     padding:10px 5px;
     border: 1px solid #dee2e6;
     overflow:hidden;
@@ -26,12 +26,12 @@
 }
 .tg .tg-ycr8{
     background-color:#ffffff;
-    text-align:left;
+    /* text-align:left; */
     vertical-align:top
 }
 .tg .tg-fs8j{
     background-color:#ffffff;
-    text-align:left
+    /* text-align:center */
 }
 .tbl-ver-registro tr th:nth-child(1){
     width: 250px;
@@ -53,4 +53,16 @@
 }
 .back-page{
     cursor: pointer;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #4080F8 !important;
+    background-color: #F1F9FF !important;
+}
+.nav-pills .nav-link {
+    border-radius: none !important;
+    background-color: #ffffff !important;
+    border: 1px solid #E5E5E5 !important;
+    width: 210px;
+    height: 40px;
+
 }
