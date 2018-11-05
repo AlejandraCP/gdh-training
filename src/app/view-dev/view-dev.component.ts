@@ -48,7 +48,7 @@ export class ViewDevComponent implements OnInit {
       if (auth) {
         this.emailUser = auth.email;
         this.isLogin = true;
-        if (auth.email === 'mllamocca@inteligogroup.com' || auth.email === 'acabrera@inteligogroup.com') {
+        if (auth.email === 'mllamocca@inteligogroup.com' || auth.email === 'kcabrejos@inteligogroup.com') {
           this.show = true;
         } else if (auth.email == undefined || auth.email == null) {
           this.show = false;

@@ -6,6 +6,10 @@
   li a {
     font-size: 13px;
   }
+
+  td {
+    font-size: 0.9rem;
+  }
 }
 
 .container-fluid {
@@ -55,9 +59,9 @@ a {
 }
 
 .btn-assist-true {
-  background-color: #eaebee;
+  background-color: #bcbdc2;
   font-weight: 500;
-  color: #817a7a;
+  color: #585555;
   border-radius: 0px;
   width: 100%;
 }

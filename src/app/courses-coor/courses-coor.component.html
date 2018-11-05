@@ -1,14 +1,14 @@
 <div>
   <nav _ngcontent-c0="" class="navbar navbar-light" style="background-color: #e3f2fd;">
-      <div _ngcontent-c0="" class="col-4 text-left coordinadora">
+      <div _ngcontent-c0="" class="col-3 col-md-3 col-sm-3 col-lg-4 col-xl-4 text-left coordinadora">
         <img _ngcontent-c0="" alt="logo Inteligo" src="../../assets/images/logo-gris.png">
       </div>
-      <div _ngcontent-c0="" class="col-4 text-center title-course">
+      <div _ngcontent-c0="" class="col-6 col-md-6 col-sm-6 col-lg-4 col-xl-4 text-center title-course">
         <span _ngcontent-c0="" >InTraining</span>
         <span>|</span>
         <span class="mr-4" _ngcontent-c0="" >Tu Bienestar Profesional</span>
       </div>
-      <div _ngcontent-c0="" class="col-4 text-right">
+      <div _ngcontent-c0="" class="col-3 col-md-3 col-sm-3 col-lg-4 col-xl-4 text-right">
         <a href="/" (click)="logOut()">Salir</a>
       </div>
     </nav>
@@ -41,7 +41,7 @@
               <div class="container">
                 <div class="row">
                   <div class="col-12 col-md-8 offset-md-2 mt-5">
-                      <table *ngIf="userSesion1" class="table table-sm table-bordered table-hover bg-white mt-2 text-left">
+                      <table *ngIf="userSesion1" class="table table-sm table-bordered table-hover table-striped bg-white mt-2 text-left">
                           <thead>
                             <tr>
                               <th scope="col" class="w-75">NOMBRE</th>
@@ -67,7 +67,7 @@
                 <div class="container">
                     <div class="row">
                       <div class="col-12 col-md-8 offset-md-2 mt-5">
-                          <table *ngIf="userSesion2" class="table table-sm table-bordered table-hover bg-white mt-2 text-left">
+                          <table *ngIf="userSesion2" class="table table-sm table-bordered table-hover table-striped bg-white mt-2 text-left">
                               <thead>
                                 <tr>
                                   <th scope="col" class="w-70">NOMBRE</th>
@@ -78,7 +78,7 @@
                                 <tr *ngFor="let item of userSesion2">
                                   <td>{{item.nombre}}</td>
                                   <td>
-                                    <button [disabled]='item.asistencia' (click)='updateUserAsistS2(item.$key, item.asistencia)' class="btn bg-btn btn-assist">
+                                    <button [disabled]='item.asistencia' [ngClass]="item.asistencia ? 'btn-assist-true' : 'btn-assist'" (click)='updateUserAsistS2(item.$key, item.asistencia)' class="btn bg-btn">
                                       Asistí
                                     </button>
                                   </td>
@@ -93,7 +93,7 @@
                 <div class="container">
                     <div class="row">
                       <div class="col-12 col-md-8 offset-md-2 mt-5">
-                          <table *ngIf="userSesion3" class="table table-sm table-bordered table-hover bg-white mt-2 text-left">
+                          <table *ngIf="userSesion3" class="table table-sm table-bordered table-hover table-striped bg-white mt-2 text-left">
                               <thead>
                                 <tr>
                                   <th scope="col" class="w-75">NOMBRE</th>
@@ -104,7 +104,7 @@
                                 <tr *ngFor="let item of userSesion3">
                                   <td>{{item.nombre}}</td>
                                   <td>
-                                    <button [disabled]='item.asistencia' (click)='updateUserAsistS3(item.$key, item.asistencia)'  class="btn bg-btn btn-assist">
+                                    <button [disabled]='item.asistencia' [ngClass]="item.asistencia ? 'btn-assist-true' : 'btn-assist'" (click)='updateUserAsistS3(item.$key, item.asistencia)'  class="btn bg-btn">
                                       Asistí
                                     </button>
                                   </td>
@@ -119,7 +119,7 @@
                 <div class="container">
                     <div class="row">
                       <div class="col-12 col-md-8 offset-md-2 mt-5">
-                          <table *ngIf="userSesion4" class="table table-sm table-bordered table-hover bg-white mt-2 text-left">
+                          <table *ngIf="userSesion4" class="table table-sm table-bordered table-hover table-striped bg-white mt-2 text-left">
                               <thead>
                                 <tr>
                                   <th scope="col" class="w-75">NOMBRE</th>
@@ -130,7 +130,7 @@
                                 <tr *ngFor="let item of userSesion4">
                                   <td>{{item.nombre}}</td>
                                   <td>
-                                    <button [disabled]='item.asistencia' (click)='updateUserAsistS4(item.$key, item.asistencia)' class="btn bg-btn btn-assist">
+                                    <button [disabled]='item.asistencia' [ngClass]="item.asistencia ? 'btn-assist-true' : 'btn-assist'" (click)='updateUserAsistS4(item.$key, item.asistencia)' class="btn bg-btn">
                                       Asistí
                                     </button>
                                   </td>
